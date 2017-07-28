@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+
+  api:
+    build: .
+    volumes:
+      - .:/app
+    command: npm run dev
+    ports:
+      - 8000:8000
