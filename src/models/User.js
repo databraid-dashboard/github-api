@@ -1,20 +1,13 @@
-require('dotenv').config();
-const fetch = require('isomorphic-fetch');
-
-function getJson(response) {
-  return response.json();
-}
-
 class User {
-  constructor(userName) {
-    this.base = 'https://api.github.com/users/';
-    this.userName = userName.userName;
+  constructor() {
+    const BASE_URL = 'https://api.github.com'
   }
 
-  get userAvatar() {
-    return fetch(`${this.base}${this.userName}?access_token=${process.env.TKN}`)
-      .then(getJson)
-      .then(result => result.avatar_url);
+  fetchUser(user) {
+    fetch(`${BASE_URL}/users/${user}/repos`)
+      .then(result => {
+        console.log(result);
+      })
   }
 }
 

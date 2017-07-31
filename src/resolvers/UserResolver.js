@@ -1,24 +1,20 @@
-const resolvers = {
-  // Query: {
-  //   posts: () => posts,
-  //   author: (_, { id }) => find(authors, { id }),
+const User = require('../models/User')
+// import User from '../models/User'
+
+const root = {
+  allUserData: (user) => {
+    return `${user}`
+    // return fetchUser(user);
+  },
+  // quoteOfTheDay: () => {
+  //   return Math.random() < 0.5 ? 'Take it easy' : 'Salvation lies within';
   // },
-  // Mutation: {
-  //   upvotePost: (_, { postId }) => {
-  //     const post = find(posts, { id: postId });
-  //     if (!post) {
-  //       throw new Error(`Couldn't find post with id ${postId}`);
-  //     }
-  //     post.votes += 1;
-  //     return post;
-  //   },
+  // random: () => {
+  //   return Math.random();
   // },
-  // Author: {
-  //   posts: author => filter(posts, { authorId: author.id }),
-  // },
-  // Post: {
-  //   author: post => find(authors, { id: post.authorId }),
+  // rollThreeDice: () => {
+  //   return [1, 2, 3].map(_ => 1 + Math.floor(Math.random() * 6));
   // },
 };
 
-export default resolvers;
+module.exports = root;

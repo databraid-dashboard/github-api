@@ -1,66 +1,74 @@
-const { buildSchema } = require('graphql');
+var { buildSchema } = require('graphql');
 
-const schema = buildSchema(`
+var schema = buildSchema(`
   type User {
-    userAvatar: String!
-  }
-
-  type Orgs {
-    orgs: [Org]
-  }
-
-  type Org {
-    id: ID!
     login: String!
-    url: String!
-    avatarUrl: String!
-  }
-
-  type Repos {
-    repos: [Repo]
-  }
-
-  type Repo {
-    id: ID!
+    email: String!
     name: String!
-    openIssues: Int
-    issues: [Issue]
-    pullRequests: [PullRequest]
-    milestones: [Milestone]
-  }
-
-  type PullRequest {
     id: ID!
-    title: String
-    submittedBy: String
-    createdAt: String!
-    number: Int!
-    mergeable: Boolean!
-  }
-
-  type Issue {
-    id: ID!
-    title: String
-    number: Int
-    state: String
-    assignee: String
-    assigneeAvatar: String
-    labels: [String]
-  }
-
-  type Milestone {
-    id: ID
-    title: String
-    openIssues: Int
-    closedIssues: Int
-    dueOn: String
+    profilePic: String!
+    orgs: [Orgs]
+    company: String
+    repos: [Repos]
   }
 
   type Query {
-    user(userName: String!): User
-    orgs(userName: String!, orgName: String): Orgs
-    repos(userName: String, repoName: String, orgName: String): Repos
+    allUserData: [User!]!
   }
 `);
 
-module.exports = schema;
+export default schema;
+
+// type User {
+//   login: String!
+//   email: String!
+//   name: String!
+//   id: ID!
+//   profilePic: String!
+//   orgs: [Orgs]
+//   company: String
+//   repos: [Repos]
+// }
+
+// type Orgs {
+//   login: String!
+//   id: ID!
+//   repos: [Repos!]
+//   issues: [Issues!]
+//   members: [String!]!
+//   profilePic: String!
+// }
+//
+// type Repos {
+//   name: String!
+//   repo: [Repo!]!
+// }
+//
+// type Issues {
+//   id: Int!
+//   number: Int!
+//   state: String!
+//   title: String!
+//   assignees: [String!]
+// }
+//
+// type Repo {
+//   name: String!
+//   branches: [String!]
+//   branchesCommitHistory: [String!]
+//   pullRequest: [PullRequest]
+//   mergeRequests: [Merge]
+//   startDate: String!
+//   pullRequestCommits: String!
+//   issues: [Issues]
+// }
+//
+// type PullRequest {
+//   status: [Status!]!
+//   lengthOfTime: String!
+// }
+//
+// type Merge {
+//   status: String!
+//   commit: String!
+// }
