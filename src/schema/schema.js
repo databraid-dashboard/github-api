@@ -10,14 +10,24 @@ var schema = buildSchema(`
     orgs: [Orgs]
     company: String
     repos: [Repos]
+    public_repos: Int!
+  }
+
+  type Orgs {
+    name: String!
+  }
+
+  type Repos {
+    name: String!
   }
 
   type Query {
-    allUserData: [User!]!
+    userData(name: String!): User!
+    orgData(url: String!): Orgs!
   }
 `);
 
-export default schema;
+module.exports = schema;
 
 // type User {
 //   login: String!

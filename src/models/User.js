@@ -1,12 +1,18 @@
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
+
 class User {
   constructor() {
-    const BASE_URL = 'https://api.github.com'
+    this.base = 'https://api.github.com/users/';
   }
 
-  fetchUser(user) {
-    fetch(`${BASE_URL}/users/${user}/repos`)
-      .then(result => {
-        console.log(result);
+  async fetchUser(user) {
+    return fetch(`${this.base}${user.name}`)
+      .then(response => {
+        return response.json()
+      })
+      .then(response => {
+        return response;
       })
   }
 }
