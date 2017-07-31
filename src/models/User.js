@@ -1,5 +1,5 @@
 require('es6-promise').polyfill();
-require('isomorphic-fetch');
+const fetch = require('isomorphic-fetch');
 
 class User {
   constructor() {
@@ -8,12 +8,8 @@ class User {
 
   async fetchUser(user) {
     return fetch(`${this.base}${user.name}`)
-      .then(response => {
-        return response.json()
-      })
-      .then(response => {
-        return response;
-      })
+      .then(response => response.json())
+      .then(response => response);
   }
 }
 

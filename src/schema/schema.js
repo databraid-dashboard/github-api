@@ -1,6 +1,6 @@
-var { buildSchema } = require('graphql');
+const { buildSchema } = require('graphql');
 
-var schema = buildSchema(`
+const schema = buildSchema(`
   type User {
     login: String!
     email: String!
