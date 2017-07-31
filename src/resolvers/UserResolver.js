@@ -1,10 +1,10 @@
-const User = require('../models/User')
+const User = require('../models/User');
 
 const root = {
   userData: async (user) => {
-    newUser = new User();
-    let response = await newUser.fetchUser(user);
-    return await response;
+    const newUser = new User();
+    const response = await newUser.fetchUser(user);
+    return response;
   },
 };
 
