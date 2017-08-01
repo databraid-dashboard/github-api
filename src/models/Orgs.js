@@ -1,10 +1,15 @@
+const fetch = require('isomorphic-fetch');
 
+class Org {
+  constructor(url) {
+    this.url = url;
+  }
 
-// class Orgs {
-//   constructor() {
-//     'https://api.github.com';
-//   }
-//   async fetchOrgs(url) {
-//     const userOrgs = await fetch(`${url}`).json();
-//   }
-// }
+  async getOrgs() {
+    return fetch(this.url)
+      .then(response => response.json())
+      .then(response => response);
+  }
+}
+
+module.exports = Org;

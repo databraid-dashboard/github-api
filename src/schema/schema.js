@@ -2,19 +2,15 @@ const { buildSchema } = require('graphql');
 
 const schema = buildSchema(`
   type User {
-    login: String!
-    email: String!
-    name: String!
     id: ID!
-    profilePic: String!
-    orgs: [Orgs]
-    company: String
-    repos: [Repos]
-    public_repos: Int!
+    avatar_url: String!
+    fetchOrgs: String!
+    repos_url: [Repos]
   }
 
-  type Orgs {
-    name: String!
+  type Org {
+    id: ID!
+    url: String!
   }
 
   type Repos {
@@ -22,10 +18,10 @@ const schema = buildSchema(`
   }
 
   type Query {
-    userData(name: String!): User!
-    orgData(url: String!): Orgs!
+    getOrgs(name: String!): User
   }
 `);
+
 
 module.exports = schema;
 
