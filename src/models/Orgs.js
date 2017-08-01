@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 const fetch = require('isomorphic-fetch');
 const Org = require('./Org');
 
@@ -53,6 +54,10 @@ class Orgs {
 
 module.exports = Orgs;
 =======
+=======
+
+
+>>>>>>> Add formatting
 // class Orgs {
 //   constructor() {
 //     'https://api.github.com';
