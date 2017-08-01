@@ -10,11 +10,6 @@ const PORT = process.env.PORT || 8000;
 
 app.use(bodyParser.json());
 
-// app.get('/:user', async (req, res) => {
-//   let response = await allUserData(req.params.user);
-//   res.json(response);
-//   // res.json(await allUserData(req.params.user));
-// });
 app.use('/graphql', graphqlHTTP({
   schema,
   rootValue: root,
