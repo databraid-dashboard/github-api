@@ -1,5 +1,6 @@
 // require('es6-promise').polyfill();
 const fetch = require('isomorphic-fetch');
+const Org = require('./Org.js');
 
 class User {
   constructor(username) {
@@ -13,34 +14,16 @@ class User {
   }
 
   fetchOrgs() {
-    fetch(`${this.base}${this.username.name}`)
+    return fetch(`${this.base}${this.username.name}?access_token=cc9898e38b925b1922482b425c881fdd3fd8e459`)
       .then(response => response.json())
-      .then((result) => {
-        console.log(result);
-        return result.organizations_url;
-      })
-      .then((orgUrl) => {
-        fetch(orgUrl)
-          .then(response => response.json())
-          .then((result) => {
-            console.log(result);
-            return result;
-          });
-        // return fetch(orgUrl);
-      });
-    // return new Org();
-    // return fetch(`${this.base}${user.name}`)
-    //   .then(response => response.json())
-    //   .then(response => fetch(response.organizations_url)
-    //     .then(result => result.json())
-    //     .then(data => data),
-    //   );
+      .then(result => result.organizations_url)
+      .then(orgsUrl => fetch(`${orgsUrl}?access_token=cc9898e38b925b1922482b425c881fdd3fd8e459`))
+      .then(response => response.json())
+      .then(result => result.map((org) => {
+        const userOrg = new Org(org);
+        return userOrg;
+      }));
   }
-
-  // async fetchOrgs(url) {
-  //   return fetch(`${url.url}`)
-  //     .then(response => response.json());
-  // }
 }
 
 module.exports = User;
