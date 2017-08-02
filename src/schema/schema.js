@@ -19,6 +19,11 @@ const schema = buildSchema(`
   type Repos {
     name: String!
     fetchIssue: [Issue]
+    fetchPullRequest: [PullRequest]
+  }
+
+  type PullRequest {
+    title: String!
   }
 
   type Issue {
@@ -27,7 +32,6 @@ const schema = buildSchema(`
 
   type Query {
     getOrgs(name: String!): User
-    testIssue: Issue
   }
 `);
 
