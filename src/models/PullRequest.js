@@ -1,4 +1,4 @@
-class PullRequests {
+class PullRequest {
   constructor(pullRequest) {
     this.pullRequest = pullRequest;
   }
@@ -23,4 +23,4 @@ class PullRequests {
   }
 }
 
-module.exports = PullRequests;
+module.exports = PullRequest;
