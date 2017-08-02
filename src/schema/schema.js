@@ -22,7 +22,7 @@ const schema = buildSchema(`
   }
 
   type Issue {
-    name: String!
+    title: String!
   }
 
   type Query {
