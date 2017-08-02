@@ -1,15 +1,24 @@
-require('es6-promise').polyfill();
+// require('es6-promise').polyfill();
+require('dotenv').config();
 const fetch = require('isomorphic-fetch');
+const Org = require('./Org.js');
 
 class User {
-  constructor() {
+  constructor(username) {
     this.base = 'https://api.github.com/users/';
+    this.username = username;
   }
 
-  async fetchUser(user) {
-    return fetch(`${this.base}${user.name}`)
+  fetchOrgs() {
+    return fetch(`${this.base}${this.username.name}?access_token=${process.env.TKN}`)
       .then(response => response.json())
-      .then(response => response);
+      .then(result => result.organizations_url)
+      .then(orgsUrl => fetch(`${orgsUrl}?access_token=${process.env.TKN}`))
+      .then(response => response.json())
+      .then(result => result.map((org) => {
+        const userOrg = new Org(org);
+        return userOrg;
+      }));
   }
 }
 
