@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* eslint-disable no-param-reassign */
 function getAssignee(assignee) {
   if (assignee === null) {
@@ -25,6 +26,31 @@ class Issue {
     this.number = this.issue.number;
     this.assignee = getAssignee(this.issue.assignee);
     this.assigneeAvatar = getAssigneeAvatar(this.issue.assignee);
+=======
+class Issue {
+  constructor(issue) {
+    this.issue = issue;
+  }
+  title() {
+    return this.issue.title;
+  }
+
+  id() {
+    return this.issue.id;
+  }
+  assigneeLogin() {
+    return this.issue.assignees.map(assignee => assignee.login);
+  }
+  assigneeAvatar() {
+    return this.issue.assignees.map(assignee => assignee.avatar_url);
+  }
+  labels() {
+    return this.issue.labels;
+  }
+
+  number() {
+    return this.issue.number;
+>>>>>>> Initial issues model
   }
 }
 
