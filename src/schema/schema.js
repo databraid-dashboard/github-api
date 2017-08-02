@@ -24,10 +24,13 @@ const schema = buildSchema(`
 
   type PullRequest {
     title: String!
+    number: Int!
+    mergeability: Boolean!
   }
 
   type Issue {
     title: String!
+    number: Int!
   }
 
   type Query {
