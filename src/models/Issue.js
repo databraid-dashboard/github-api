@@ -19,6 +19,10 @@ class Issue {
     return this.issue.labels;
   }
 
+  state() {
+    return this.issue.state;
+  }
+
   number() {
     return this.issue.number;
   }

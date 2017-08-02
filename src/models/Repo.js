@@ -1,6 +1,7 @@
 const fetch = require('isomorphic-fetch');
 const Issue = require('./Issue');
 const PullRequest = require('./PullRequest');
+const Milestone = require('./Milestone');
 
 class Repo {
   constructor(repo) {
@@ -14,6 +15,9 @@ class Repo {
   id() {
     return this.repo.id;
   }
+  openIssues() {
+    return this.repo.open_issues;
+  }
 
   fetchIssue() {
     return fetch(`${this.repo.issues_url.slice(0, -9)}?state=all&access_token=${process.env.TKN}`)
@@ -24,7 +28,7 @@ class Repo {
       }));
   }
 
-  async fetchPullRequest() {
+  fetchPullRequest() {
     return fetch(`${this.repo.pulls_url.slice(0, -9)}?access_token=${process.env.TKN}`)
       .then(response => response.json())
       .then(response => response.map(pullRequests => fetch(`${pullRequests.url}?access_token=${process.env.TKN}`)))
@@ -34,6 +38,15 @@ class Repo {
       .then(pullRequests => pullRequests.map((pullRequest) => {
         const pr = new PullRequest(pullRequest);
         return pr;
+      }));
+  }
+
+  fetchMilestone() {
+    return fetch(`${this.repo.milestones_url.slice(0, -9)}?access_token=${process.env.TKN}`)
+      .then(response => response.json())
+      .then(response => response.map((milestone) => {
+        const repoMilestone = new Milestone(milestone);
+        return repoMilestone;
       }));
   }
 }

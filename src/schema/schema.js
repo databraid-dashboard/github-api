@@ -2,35 +2,54 @@ const { buildSchema } = require('graphql');
 
 const schema = buildSchema(`
   type User {
-    fetchUser: String!
     id: ID!
+    fetchUser: String!
     avatar_url: String!
     fetchOrgs: [Org]
     repos_url: [Repos]
   }
 
   type Org {
-    login: String!
     id: ID!
+    login: String!
     url: String!
     fetchRepos: [Repos]
   }
 
   type Repos {
+    id: ID!
     name: String!
     fetchIssue: [Issue]
+    openIssues: Int!
     fetchPullRequest: [PullRequest]
+    fetchMilestone: [Milestone]
   }
 
   type PullRequest {
+    id: ID!
     title: String!
+    submittedBy: String!
+    createdAt: String!
     number: Int!
     mergeability: Boolean!
   }
 
   type Issue {
+    id: ID!
     title: String!
     number: Int!
+    state: String!
+    assigneeAvatar: String!
+    assigneeLogin: String!
+    labels: [String]
+  }
+
+  type Milestone {
+    id: ID!
+    title: String!
+    openIssues: Int!
+    closedIssues: Int!
+    dueOn: String!
   }
 
   type Query {
