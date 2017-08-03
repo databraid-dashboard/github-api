@@ -1,6 +1,5 @@
 /* eslint-disable no-undef, no-unused-expressions */
 const { expect } = require('chai');
-const sinon = require('sinon');
 require('chai').use(require('sinon-chai'));
 const nock = require('nock');
 const User = require('../src/models/User');
