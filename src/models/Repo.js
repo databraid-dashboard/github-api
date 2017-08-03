@@ -98,31 +98,24 @@ const Milestone = require('./Milestone');
 class Repo {
   constructor(repo) {
     this.repo = repo;
-  }
+    this.name = () => this.repo.name;
 
-  name() {
-    return this.repo.name;
-  }
+    this.id = () => this.repo.id;
+    this.openIssues = () => this.repo.open_issues;
 
-  id() {
-    return this.repo.id;
-  }
-  openIssues() {
-    return this.repo.open_issues;
-  }
-
-  fetchIssue() {
-    return fetch(`${this.repo.issues_url.slice(0, -9)}?state=all&access_token=${process.env.TKN}`)
+    this.fetchIssue = () => fetch(`${this.repo.issues_url.slice(0, -9)}?state=all&access_token=${process.env.TKN}`)
       .then(response => response.json())
       .then(response => response.map((issue) => {
         const repoIssue = new Issue(issue);
         return repoIssue;
       }));
+<<<<<<< HEAD
 >>>>>>> Complete Repo Resolver and Model
   }
+=======
+>>>>>>> Complete Repo model test
 
-  fetchPullRequest() {
-    return fetch(`${this.repo.pulls_url.slice(0, -9)}?access_token=${process.env.TKN}`)
+    this.fetchPullRequest = () => fetch(`${this.repo.pulls_url.slice(0, -9)}?access_token=${process.env.TKN}`)
       .then(response => response.json())
       .then(response => response.map(pullRequests => fetch(`${pullRequests.url}?access_token=${process.env.TKN}`)))
       .then(promiseArray => Promise.all(promiseArray))
@@ -132,10 +125,8 @@ class Repo {
         const pr = new PullRequest(pullRequest);
         return pr;
       }));
-  }
 
-  fetchMilestone() {
-    return fetch(`${this.repo.milestones_url.slice(0, -9)}?access_token=${process.env.TKN}`)
+    this.fetchMilestone = () => fetch(`${this.repo.milestones_url.slice(0, -9)}?access_token=${process.env.TKN}`)
       .then(response => response.json())
       .then(response => response.map((milestone) => {
         const repoMilestone = new Milestone(milestone);
