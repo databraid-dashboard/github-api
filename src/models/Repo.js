@@ -6,10 +6,9 @@ const Milestone = require('./Milestone');
 class Repo {
   constructor(repo) {
     this.repo = repo;
-    this.name = () => this.repo.name;
-
-    this.id = () => this.repo.id;
-    this.openIssues = () => this.repo.open_issues;
+    this.name = this.repo.name;
+    this.id = this.repo.id;
+    this.openIssues = this.repo.open_issues;
 
     this.fetchIssue = () => fetch(`${this.repo.issues_url.slice(0, -9)}?state=all&access_token=${process.env.TKN}`)
       .then(response => response.json())
