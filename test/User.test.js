@@ -7,20 +7,20 @@ const User = require('../src/models/User');
 describe('User model', () => {
   const user = new User({ name: 'michaelmurray6298' });
 
-  it('its constructor contains base url', () => {
+  it('constructor contains base url', () => {
     expect(user.base).to.equal('https://api.github.com/users/');
   });
 
-  it('its constructor accepts a passed in argument', () => {
+  it('constructor accepts a passed in argument', () => {
     expect(user.username.name).to.equal('michaelmurray6298');
   });
 
-  it('it has fetchOrgs method', () => {
+  it('has fetchOrgs method', () => {
     expect(user.fetchOrgs).to.exist;
   });
 
 
-  it('it has a fetchUserRepo method', () => {
+  it('has a fetchUserRepo method', () => {
     expect(user.fetchUserRepo).to.exist;
   });
   after((done) => {
