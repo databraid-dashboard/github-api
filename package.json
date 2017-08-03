@@ -24,12 +24,16 @@
     "graphql": "0.10.5",
     "graphql-tools": "1.1.0",
     "isomorphic-fetch": "2.2.1",
+    "nock": "^9.0.14",
     "node-fetch": "1.7.1",
     "nodemon": "1.11.0",
     "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {
-    "chai": "4.1.0",
-    "mocha": "3.4.2"
+    "babel-register": "^6.24.1",
+    "chai": "^4.1.0",
+    "mocha": "^3.5.0",
+    "sinon": "^2.4.1",
+    "sinon-chai": "^2.12.0"
   }
 }
