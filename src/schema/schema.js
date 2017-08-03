@@ -3,10 +3,9 @@ const { buildSchema } = require('graphql');
 const schema = buildSchema(`
   type User {
     id: ID!
-    fetchUser: String!
     avatar_url: String!
     fetchOrgs: [Org]
-    repos_url: [Repos]
+    fetchUserRepo: [Repos]
   }
 
   type Org {
@@ -53,7 +52,7 @@ const schema = buildSchema(`
   }
 
   type Query {
-    getOrgs(name: String!): User
+    getUser(name: String!): User
   }
 `);
 

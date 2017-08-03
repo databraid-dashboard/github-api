@@ -1,7 +1,7 @@
 const User = require('../models/User');
 
 const root = {
-  getOrgs(username) {
+  getUser(username) {
     return new User(username);
   },
 };
