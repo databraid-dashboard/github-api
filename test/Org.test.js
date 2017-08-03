@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const sinon = require('sinon');
+// const sinon = require('sinon');
 const nock = require('nock');
 require('chai').use(require('sinon-chai'));
 const Org = require('../src/models/Org');
@@ -8,8 +8,68 @@ const Org = require('../src/models/Org');
 /* eslint-disable no-undef */
 
 describe('Org model', () => {
-  beforeEach(() => {
-    const response = [
+  const org = new Org({
+    login: 'ski-ski',
+    id: 29638033,
+    url: 'https://api.github.com/orgs/ski-ski',
+    repos_url: 'https://api.github.com/orgs/ski-ski/repos',
+    events_url: 'https://api.github.com/orgs/ski-ski/events',
+    hooks_url: 'https://api.github.com/orgs/ski-ski/hooks',
+    issues_url: 'https://api.github.com/orgs/ski-ski/issues',
+    members_url: 'https://api.github.com/orgs/ski-ski/members{/member}',
+    public_members_url: 'https://api.github.com/orgs/ski-ski/public_members{/member}',
+    avatar_url: 'https://avatars3.githubusercontent.com/u/29638033?v=4',
+    description: null,
+    has_organization_projects: true,
+    has_repository_projects: true,
+    public_repos: 1,
+    public_gists: 0,
+    followers: 0,
+    following: 0,
+    html_url: 'https://github.com/ski-ski',
+    created_at: '2017-06-22T18:04:32Z',
+    updated_at: '2017-06-22T18:05:56Z',
+    type: 'Organization',
+    total_private_repos: 0,
+    owned_private_repos: 0,
+    private_gists: 0,
+    disk_usage: 472,
+    collaborators: 0,
+    billing_email: 'michaelmurray6298@gmail.com',
+    plan: {
+      name: 'free',
+      space: 976562499,
+      private_repos: 0,
+      filled_seats: 2,
+      seats: 0,
+    },
+    default_repository_permission: 'admin',
+    members_can_create_repositories: true,
+  });
+
+  it('has login method ', () => {
+    expect(org.login).to.exist;
+  });
+
+  it('has id method ', () => {
+    expect(org.id).to.exist;
+  });
+
+  it('has url method ', () => {
+    expect(org.url).to.exist;
+  });
+
+  it('has fetchRepos method ', () => {
+    expect(org.fetchRepos).to.exist;
+  });
+  it('accepts params', () => {
+    expect(org.org.id).to.equal(29638033);
+  });
+  after((done) => {
+    done();
+  });
+  it('fetchRepos method returns a repo', async () => {
+    const repoResponse = [
       {
         id: 95143360,
         name: 'skiski-app',
@@ -103,80 +163,11 @@ describe('Org model', () => {
           push: true,
           pull: true,
         },
-      },
-    ];
+      }];
     nock('https://api.github.com')
       .get(`/orgs/ski-ski/repos?access_token=${process.env.TKN}`)
-      .reply(200, response);
-  });
-
-  it('has login method ', () => {
-    const org = sinon.createStubInstance(Org);
-    expect(org.login).to.exist;
-  });
-
-  it('has id method ', () => {
-    const org = sinon.createStubInstance(Org);
-    expect(org.id).to.exist;
-  });
-
-  it('has url method ', () => {
-    const org = sinon.createStubInstance(Org);
-    expect(org.url).to.exist;
-  });
-
-  it('has fetchRepos method ', () => {
-    const org = sinon.createStubInstance(Org);
-    expect(org.fetchRepos).to.exist;
-  });
-  it('accepts params', () => {
-    const org = new Org({ id: 1 });
-    expect(org.org.id).to.equal(1);
-  });
-  it('fetchRepos method returns a repo', (done) => {
-    const org = new Org({
-      login: 'ski-ski',
-      id: 29638033,
-      url: 'https://api.github.com/orgs/ski-ski',
-      repos_url: 'https://api.github.com/orgs/ski-ski/repos',
-      events_url: 'https://api.github.com/orgs/ski-ski/events',
-      hooks_url: 'https://api.github.com/orgs/ski-ski/hooks',
-      issues_url: 'https://api.github.com/orgs/ski-ski/issues',
-      members_url: 'https://api.github.com/orgs/ski-ski/members{/member}',
-      public_members_url: 'https://api.github.com/orgs/ski-ski/public_members{/member}',
-      avatar_url: 'https://avatars3.githubusercontent.com/u/29638033?v=4',
-      description: null,
-      has_organization_projects: true,
-      has_repository_projects: true,
-      public_repos: 1,
-      public_gists: 0,
-      followers: 0,
-      following: 0,
-      html_url: 'https://github.com/ski-ski',
-      created_at: '2017-06-22T18:04:32Z',
-      updated_at: '2017-06-22T18:05:56Z',
-      type: 'Organization',
-      total_private_repos: 0,
-      owned_private_repos: 0,
-      private_gists: 0,
-      disk_usage: 472,
-      collaborators: 0,
-      billing_email: 'michaelmurray6298@gmail.com',
-      plan: {
-        name: 'free',
-        space: 976562499,
-        private_repos: 0,
-        filled_seats: 2,
-        seats: 0,
-      },
-      default_repository_permission: 'admin',
-      members_can_create_repositories: true,
-    });
-    org.fetchRepos(() => {
-      expect(Array.isArray(orgRepo)).to.equal(true);
-      expect(orgRepo).to.have.length.above(1);
-      expect(orgRepo.id).to.equal(95143360);
-    });
-    done();
+      .reply(200, repoResponse);
+    const repos = await org.fetchRepos();
+    expect(repos[0].repo.id).to.equal(repoResponse[0].id);
   });
 });
