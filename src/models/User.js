@@ -8,6 +8,7 @@ class User {
   constructor(username) {
     this.base = 'https://api.github.com/users/';
     this.username = username;
+
     this.fetchOrgs = () => fetch(`${this.base}${this.username.name}?access_token=${process.env.TKN}`)
       .then(response => response.json())
       .then(result => result.organizations_url)
@@ -17,6 +18,7 @@ class User {
         const userOrg = new Org(org);
         return userOrg;
       }));
+
     this.fetchUserRepo = () => fetch(`${this.base}${this.username.name}?access_token=${process.env.TKN}`)
       .then(response => response.json())
       .then(user => user.repos_url)

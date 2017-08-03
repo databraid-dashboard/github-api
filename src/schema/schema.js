@@ -30,7 +30,7 @@ const schema = buildSchema(`
     submittedBy: String!
     createdAt: String!
     number: Int!
-    mergeability: Boolean!
+    mergeable: Boolean!
   }
 
   type Issue {
@@ -52,7 +52,7 @@ const schema = buildSchema(`
   }
 
   type Query {
-    getUser(name: String!): User
+    getGitData(name: String!): User
   }
 `);
 
