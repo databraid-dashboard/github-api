@@ -4,22 +4,11 @@ const Repo = require('./Repo');
 class Org {
   constructor(org) {
     this.org = org;
-  }
+    this.login = this.org.login;
+    this.id = this.org.id;
+    this.url = this.org.url;
 
-  login() {
-    return this.org.login;
-  }
-
-  id() {
-    return this.org.id;
-  }
-
-  url() {
-    return this.org.url;
-  }
-
-  fetchRepos() {
-    return fetch(`${this.org.repos_url}?access_token=${process.env.TKN}`)
+    this.fetchRepos = () => fetch(`${this.org.repos_url}?access_token=${process.env.TKN}`)
       .then(response => response.json())
       .then(result => result.map((repo) => {
         const orgRepo = new Repo(repo);

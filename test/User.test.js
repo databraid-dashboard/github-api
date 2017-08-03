@@ -1,12 +1,73 @@
 /* eslint-disable no-undef, no-unused-expressions */
 const { expect } = require('chai');
-const sinon = require('sinon');
 require('chai').use(require('sinon-chai'));
 const nock = require('nock');
 const User = require('../src/models/User');
 
 describe('User model', () => {
-  beforeEach(() => {
+  const user = new User({ name: 'michaelmurray6298' });
+
+  it('constructor contains base url', () => {
+    expect(user.base).to.equal('https://api.github.com/users/');
+  });
+
+  it('constructor accepts a passed in argument', () => {
+    expect(user.username.name).to.equal('michaelmurray6298');
+  });
+
+  it('has fetchOrgs method', () => {
+    expect(user.fetchOrgs).to.exist;
+  });
+
+
+  it('has a fetchUserRepo method', () => {
+    expect(user.fetchUserRepo).to.exist;
+  });
+  after((done) => {
+    done();
+  });
+  it('fetchOrgs should return all the user orgs', async () => {
+    const orgFetch = [
+      {
+        login: 'gSchool',
+        id: 3484345,
+        url: 'https://api.github.com/orgs/gSchool',
+        repos_url: 'https://api.github.com/orgs/gSchool/repos',
+        events_url: 'https://api.github.com/orgs/gSchool/events',
+        hooks_url: 'https://api.github.com/orgs/gSchool/hooks',
+        issues_url: 'https://api.github.com/orgs/gSchool/issues',
+        members_url: 'https://api.github.com/orgs/gSchool/members{/member}',
+        public_members_url: 'https://api.github.com/orgs/gSchool/public_members{/member}',
+        avatar_url: 'https://avatars1.githubusercontent.com/u/3484345?v=4',
+        description: 'Home of all the Galvanize education repositories',
+      },
+      {
+        login: 'mondoGroup',
+        id: 29386798,
+        url: 'https://api.github.com/orgs/mondoGroup',
+        repos_url: 'https://api.github.com/orgs/mondoGroup/repos',
+        events_url: 'https://api.github.com/orgs/mondoGroup/events',
+        hooks_url: 'https://api.github.com/orgs/mondoGroup/hooks',
+        issues_url: 'https://api.github.com/orgs/mondoGroup/issues',
+        members_url: 'https://api.github.com/orgs/mondoGroup/members{/member}',
+        public_members_url: 'https://api.github.com/orgs/mondoGroup/public_members{/member}',
+        avatar_url: 'https://avatars1.githubusercontent.com/u/29386798?v=4',
+        description: null,
+      },
+      {
+        login: 'ski-ski',
+        id: 29638033,
+        url: 'https://api.github.com/orgs/ski-ski',
+        repos_url: 'https://api.github.com/orgs/ski-ski/repos',
+        events_url: 'https://api.github.com/orgs/ski-ski/events',
+        hooks_url: 'https://api.github.com/orgs/ski-ski/hooks',
+        issues_url: 'https://api.github.com/orgs/ski-ski/issues',
+        members_url: 'https://api.github.com/orgs/ski-ski/members{/member}',
+        public_members_url: 'https://api.github.com/orgs/ski-ski/public_members{/member}',
+        avatar_url: 'https://avatars3.githubusercontent.com/u/29638033?v=4',
+        description: null,
+      },
+    ];
     const userFetch = {
       login: 'michaelmurray6298',
       id: 24865792,
@@ -51,49 +112,20 @@ describe('User model', () => {
         private_repos: 0,
       },
     };
+    nock('https://api.github.com')
+      .get(`/users/michaelmurray6298?access_token=${process.env.TKN}`)
+      .reply(200, userFetch);
+    nock('https://api.github.com')
+      .get(`/users/michaelmurray6298/orgs?access_token=${process.env.TKN}`)
+      .reply(200, orgFetch);
 
-    const orgFetch = [
-      {
-        login: 'gSchool',
-        id: 3484345,
-        url: 'https://api.github.com/orgs/gSchool',
-        repos_url: 'https://api.github.com/orgs/gSchool/repos',
-        events_url: 'https://api.github.com/orgs/gSchool/events',
-        hooks_url: 'https://api.github.com/orgs/gSchool/hooks',
-        issues_url: 'https://api.github.com/orgs/gSchool/issues',
-        members_url: 'https://api.github.com/orgs/gSchool/members{/member}',
-        public_members_url: 'https://api.github.com/orgs/gSchool/public_members{/member}',
-        avatar_url: 'https://avatars1.githubusercontent.com/u/3484345?v=4',
-        description: 'Home of all the Galvanize education repositories',
-      },
-      {
-        login: 'mondoGroup',
-        id: 29386798,
-        url: 'https://api.github.com/orgs/mondoGroup',
-        repos_url: 'https://api.github.com/orgs/mondoGroup/repos',
-        events_url: 'https://api.github.com/orgs/mondoGroup/events',
-        hooks_url: 'https://api.github.com/orgs/mondoGroup/hooks',
-        issues_url: 'https://api.github.com/orgs/mondoGroup/issues',
-        members_url: 'https://api.github.com/orgs/mondoGroup/members{/member}',
-        public_members_url: 'https://api.github.com/orgs/mondoGroup/public_members{/member}',
-        avatar_url: 'https://avatars1.githubusercontent.com/u/29386798?v=4',
-        description: null,
-      },
-      {
-        login: 'ski-ski',
-        id: 29638033,
-        url: 'https://api.github.com/orgs/ski-ski',
-        repos_url: 'https://api.github.com/orgs/ski-ski/repos',
-        events_url: 'https://api.github.com/orgs/ski-ski/events',
-        hooks_url: 'https://api.github.com/orgs/ski-ski/hooks',
-        issues_url: 'https://api.github.com/orgs/ski-ski/issues',
-        members_url: 'https://api.github.com/orgs/ski-ski/members{/member}',
-        public_members_url: 'https://api.github.com/orgs/ski-ski/public_members{/member}',
-        avatar_url: 'https://avatars3.githubusercontent.com/u/29638033?v=4',
-        description: null,
-      },
-    ];
-
+    const orgs = await user.fetchOrgs();
+    expect(orgs[0].org.id).to.equal(orgFetch[0].id);
+  });
+  after((done) => {
+    done();
+  });
+  it('fetchUserRepo should return all the user repos', async () => {
     const repoFetch = [
       {
         id: 98671137,
@@ -1976,50 +2008,57 @@ describe('User model', () => {
         },
       },
     ];
-    nock('https://api.github.com')
-      .get(`/users/michaelmurray6298?access_token=${process.env.TKN}`)
-      .reply(200, userFetch);
-    nock('https://api.github.com')
-      .get(`/users/michaelmurray6298/orgs?access_token=${process.env.TKN}`)
-      .reply(200, orgFetch);
+    const userFetch = {
+      login: 'michaelmurray6298',
+      id: 24865792,
+      avatar_url: 'https://avatars1.githubusercontent.com/u/24865792?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/michaelmurray6298',
+      html_url: 'https://github.com/michaelmurray6298',
+      followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
+      following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+      gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+      starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
+      organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+      repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
+      events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+      received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+      type: 'User',
+      site_admin: false,
+      name: 'Michael Murray',
+      company: null,
+      blog: '',
+      location: null,
+      email: 'michaelmurray6298@gmail.com',
+      hireable: null,
+      bio: null,
+      public_repos: 20,
+      public_gists: 0,
+      followers: 0,
+      following: 0,
+      created_at: '2017-01-01T19:17:16Z',
+      updated_at: '2017-07-27T16:44:43Z',
+      private_gists: 0,
+      total_private_repos: 28,
+      owned_private_repos: 0,
+      disk_usage: 18833,
+      collaborators: 0,
+      two_factor_authentication: false,
+      plan: {
+        name: 'free',
+        space: 976562499,
+        collaborators: 0,
+        private_repos: 0,
+      },
+    };
     nock('https://api.github.com')
       .get(`/users/michaelmurray6298/repos?access_token=${process.env.TKN}`)
       .reply(200, repoFetch);
-  });
-
-  it('its constructor contains base url', () => {
-    const user = new User({ username: 'ronanfitz' });
-    expect(user.base).to.equal('https://api.github.com/users/');
-  });
-
-  it('its constructor accepts a passed in argument', () => {
-    const user = new User({ username: 'ronanfitz' });
-    expect(user.username.username).to.equal('ronanfitz');
-  });
-
-  it('it has fetchOrgs method', () => {
-    const user = sinon.createStubInstance(User);
-    expect(user.fetchOrgs).to.exist;
-  });
-
-  it('fetchOrgs should return all the user orgs', (done) => {
-    const user = new User({ name: 'michaelmurray6298' });
-    user.fetchOrgs(() => {
-      expect(userOrg[0].id).to.equal(3484345);
-    });
-    done();
-  });
-
-  it('it has a fetchUserRepo method', () => {
-    const user = sinon.createStubInstance(User);
-    expect(user.fetchUserRepo).to.exist;
-  });
-
-  it('fetchUserRepo should return all the user repos', (done) => {
-    const user = new User({ name: 'michaelmurray6298' });
-    user.fetchUserRepo(() => {
-      expect(userRepo[0].id).to.equal(98671137);
-    });
-    done();
+    nock('https://api.github.com')
+      .get(`/users/michaelmurray6298?access_token=${process.env.TKN}`)
+      .reply(200, userFetch);
+    const userRepo = await user.fetchUserRepo();
+    expect(userRepo[0].repo.id).to.equal(repoFetch[0].id);
   });
 });
