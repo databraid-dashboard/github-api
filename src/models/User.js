@@ -1,4 +1,3 @@
-// require('es6-promise').polyfill();
 require('dotenv').config();
 const fetch = require('isomorphic-fetch');
 const Org = require('./Org');
