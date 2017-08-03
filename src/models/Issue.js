@@ -2,6 +2,7 @@ class Issue {
   constructor(issue) {
     this.issue = issue;
   }
+
   title() {
     return this.issue.title;
   }
@@ -9,12 +10,15 @@ class Issue {
   id() {
     return this.issue.id;
   }
+
   assigneeLogin() {
     return this.issue.assignees.map(assignee => assignee.login);
   }
+
   assigneeAvatar() {
     return this.issue.assignees.map(assignee => assignee.avatar_url);
   }
+
   labels() {
     return this.issue.labels;
   }
