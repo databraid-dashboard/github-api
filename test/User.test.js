@@ -17,7 +17,7 @@ describe('User model', () => {
   after((done) => {
     done();
   });
-  it('fetchOrgs should return all the user orgs', async () => {
+  it('orgs method should return all the user orgs', async () => {
     const orgFetch = [
       {
         login: 'gSchool',
@@ -125,7 +125,7 @@ describe('User model', () => {
   after((done) => {
     done();
   });
-  it('fetchUserRepo should return all the user repos', async () => {
+  it('userRepos should return all the user repos', async () => {
     const repoFetch = [
       {
         id: 98671137,
