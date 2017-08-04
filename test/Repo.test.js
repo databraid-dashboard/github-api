@@ -148,7 +148,7 @@ describe('Repo model', () => {
   after((done) => {
     done();
   });
-  it('fetchIssue method returns an issue', async () => {
+  it('issue method returns an issue', async () => {
     const fetchIssueResponse = [
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/67',
@@ -2103,7 +2103,7 @@ describe('Repo model', () => {
   after((done) => {
     done();
   });
-  it('fetchPullRequest method returns a pull request', async () => {
+  it('pullRequest method returns a pull request', async () => {
     const fetchPullsResponse = [
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/pulls/68',
