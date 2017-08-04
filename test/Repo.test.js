@@ -7,7 +7,7 @@ const Repo = require('../src/models/Repo');
 /* eslint-disable no-undef */
 
 describe('Repo model', () => {
-  const repo = new Repo({
+  const data = new Repo({
     id: 95143360,
     name: 'skiski-app',
     full_name: 'ski-ski/skiski-app',
@@ -19,14 +19,17 @@ describe('Repo model', () => {
       url: 'https://api.github.com/users/ski-ski',
       html_url: 'https://github.com/ski-ski',
       followers_url: 'https://api.github.com/users/ski-ski/followers',
-      following_url: 'https://api.github.com/users/ski-ski/following{/other_user}',
+      following_url:
+    'https://api.github.com/users/ski-ski/following{/other_user}',
       gists_url: 'https://api.github.com/users/ski-ski/gists{/gist_id}',
-      starred_url: 'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
+      starred_url:
+    'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
       subscriptions_url: 'https://api.github.com/users/ski-ski/subscriptions',
       organizations_url: 'https://api.github.com/users/ski-ski/orgs',
       repos_url: 'https://api.github.com/users/ski-ski/repos',
       events_url: 'https://api.github.com/users/ski-ski/events{/privacy}',
-      received_events_url: 'https://api.github.com/users/ski-ski/received_events',
+      received_events_url:
+    'https://api.github.com/users/ski-ski/received_events',
       type: 'Organization',
       site_admin: false,
     },
@@ -37,40 +40,65 @@ describe('Repo model', () => {
     url: 'https://api.github.com/repos/ski-ski/skiski-app',
     forks_url: 'https://api.github.com/repos/ski-ski/skiski-app/forks',
     keys_url: 'https://api.github.com/repos/ski-ski/skiski-app/keys{/key_id}',
-    collaborators_url: 'https://api.github.com/repos/ski-ski/skiski-app/collaborators{/collaborator}',
+    collaborators_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/collaborators{/collaborator}',
     teams_url: 'https://api.github.com/repos/ski-ski/skiski-app/teams',
     hooks_url: 'https://api.github.com/repos/ski-ski/skiski-app/hooks',
-    issue_events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/events{/number}',
+    issue_events_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/issues/events{/number}',
     events_url: 'https://api.github.com/repos/ski-ski/skiski-app/events',
-    assignees_url: 'https://api.github.com/repos/ski-ski/skiski-app/assignees{/user}',
-    branches_url: 'https://api.github.com/repos/ski-ski/skiski-app/branches{/branch}',
+    assignees_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/assignees{/user}',
+    branches_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/branches{/branch}',
     tags_url: 'https://api.github.com/repos/ski-ski/skiski-app/tags',
-    blobs_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/blobs{/sha}',
-    git_tags_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/tags{/sha}',
-    git_refs_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/refs{/sha}',
-    trees_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/trees{/sha}',
-    statuses_url: 'https://api.github.com/repos/ski-ski/skiski-app/statuses/{sha}',
+    blobs_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/git/blobs{/sha}',
+    git_tags_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/git/tags{/sha}',
+    git_refs_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/git/refs{/sha}',
+    trees_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/git/trees{/sha}',
+    statuses_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/statuses/{sha}',
     languages_url: 'https://api.github.com/repos/ski-ski/skiski-app/languages',
-    stargazers_url: 'https://api.github.com/repos/ski-ski/skiski-app/stargazers',
-    contributors_url: 'https://api.github.com/repos/ski-ski/skiski-app/contributors',
-    subscribers_url: 'https://api.github.com/repos/ski-ski/skiski-app/subscribers',
-    subscription_url: 'https://api.github.com/repos/ski-ski/skiski-app/subscription',
-    commits_url: 'https://api.github.com/repos/ski-ski/skiski-app/commits{/sha}',
-    git_commits_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/commits{/sha}',
-    comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/comments{/number}',
-    issue_comment_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/comments{/number}',
-    contents_url: 'https://api.github.com/repos/ski-ski/skiski-app/contents/{+path}',
-    compare_url: 'https://api.github.com/repos/ski-ski/skiski-app/compare/{base}...{head}',
+    stargazers_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/stargazers',
+    contributors_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/contributors',
+    subscribers_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/subscribers',
+    subscription_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/subscription',
+    commits_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/commits{/sha}',
+    git_commits_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/git/commits{/sha}',
+    comments_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/comments{/number}',
+    issue_comment_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/issues/comments{/number}',
+    contents_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/contents/{+path}',
+    compare_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/compare/{base}...{head}',
     merges_url: 'https://api.github.com/repos/ski-ski/skiski-app/merges',
-    archive_url: 'https://api.github.com/repos/ski-ski/skiski-app/{archive_format}{/ref}',
+    archive_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/{archive_format}{/ref}',
     downloads_url: 'https://api.github.com/repos/ski-ski/skiski-app/downloads',
-    issues_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues{/number}',
+    issues_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/issues{/number}',
     pulls_url: 'https://api.github.com/repos/ski-ski/skiski-app/pulls{/number}',
-    milestones_url: 'https://api.github.com/repos/ski-ski/skiski-app/milestones{/number}',
-    notifications_url: 'https://api.github.com/repos/ski-ski/skiski-app/notifications{?since,all,participating}',
+    milestones_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/milestones{/number}',
+    notifications_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/notifications{?since,all,participating}',
     labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/labels{/name}',
-    releases_url: 'https://api.github.com/repos/ski-ski/skiski-app/releases{/id}',
-    deployments_url: 'https://api.github.com/repos/ski-ski/skiski-app/deployments',
+    releases_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/releases{/id}',
+    deployments_url:
+   'https://api.github.com/repos/ski-ski/skiski-app/deployments',
     created_at: '2017-06-22T18:08:21Z',
     updated_at: '2017-06-23T22:48:38Z',
     pushed_at: '2017-08-02T21:01:03Z',
@@ -102,19 +130,19 @@ describe('Repo model', () => {
     },
   });
 
-  it('has name method ', () => {
-    expect(repo.name).to.exist;
-  });
-
-  it('has id method ', () => {
-    expect(repo.id).to.exist;
-  });
-
-  it('has open issues method ', () => {
-    expect(repo.openIssues).to.exist;
-  });
   it('accepts params', () => {
-    expect(repo.repo.id).to.equal(95143360);
+    expect(data.repo.id).to.equal(95143360);
+  });
+  it('has name property ', () => {
+    expect(data.name).to.equal('skiski-app');
+  });
+
+  it('has id property ', () => {
+    expect(data.id).to.equal(95143360);
+  });
+
+  it('has open issues property ', () => {
+    expect(data.openIssues).to.equal(0);
   });
 
   after((done) => {
@@ -125,9 +153,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/67',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/67/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/67/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/67/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/67/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/67/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/67/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/67',
         id: 247520833,
         number: 67,
@@ -139,15 +170,23 @@ describe('Repo model', () => {
           gravatar_id: '',
           url: 'https://api.github.com/users/michaelmurray6298',
           html_url: 'https://github.com/michaelmurray6298',
-          followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-          following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-          gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-          organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+          followers_url:
+      'https://api.github.com/users/michaelmurray6298/followers',
+          following_url:
+      'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+          gists_url:
+      'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+          starred_url:
+      'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/michaelmurray6298/subscriptions',
+          organizations_url:
+      'https://api.github.com/users/michaelmurray6298/orgs',
           repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-          events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+          events_url:
+      'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+          received_events_url:
+      'https://api.github.com/users/michaelmurray6298/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -172,9 +211,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/66',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/66/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/66/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/66/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/66/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/66/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/66/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/66',
         id: 247517524,
         number: 66,
@@ -186,15 +228,23 @@ describe('Repo model', () => {
           gravatar_id: '',
           url: 'https://api.github.com/users/michaelmurray6298',
           html_url: 'https://github.com/michaelmurray6298',
-          followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-          following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-          gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-          organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+          followers_url:
+      'https://api.github.com/users/michaelmurray6298/followers',
+          following_url:
+      'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+          gists_url:
+      'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+          starred_url:
+      'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/michaelmurray6298/subscriptions',
+          organizations_url:
+      'https://api.github.com/users/michaelmurray6298/orgs',
           repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-          events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+          events_url:
+      'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+          received_events_url:
+      'https://api.github.com/users/michaelmurray6298/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -219,9 +269,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/65',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/65/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/65/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/65/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/65/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/65/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/65/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/65',
         id: 247483086,
         number: 65,
@@ -233,15 +286,23 @@ describe('Repo model', () => {
           gravatar_id: '',
           url: 'https://api.github.com/users/michaelmurray6298',
           html_url: 'https://github.com/michaelmurray6298',
-          followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-          following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-          gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-          organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+          followers_url:
+      'https://api.github.com/users/michaelmurray6298/followers',
+          following_url:
+      'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+          gists_url:
+      'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+          starred_url:
+      'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/michaelmurray6298/subscriptions',
+          organizations_url:
+      'https://api.github.com/users/michaelmurray6298/orgs',
           repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-          events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+          events_url:
+      'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+          received_events_url:
+      'https://api.github.com/users/michaelmurray6298/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -266,9 +327,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/64',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/64/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/64/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/64/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/64/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/64/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/64/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/64',
         id: 247482882,
         number: 64,
@@ -280,15 +344,23 @@ describe('Repo model', () => {
           gravatar_id: '',
           url: 'https://api.github.com/users/michaelmurray6298',
           html_url: 'https://github.com/michaelmurray6298',
-          followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-          following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-          gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-          organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+          followers_url:
+      'https://api.github.com/users/michaelmurray6298/followers',
+          following_url:
+      'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+          gists_url:
+      'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+          starred_url:
+      'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/michaelmurray6298/subscriptions',
+          organizations_url:
+      'https://api.github.com/users/michaelmurray6298/orgs',
           repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-          events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+          events_url:
+      'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+          received_events_url:
+      'https://api.github.com/users/michaelmurray6298/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -313,9 +385,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/63',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/63/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/63/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/63/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/63/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/63/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/63/events',
         html_url: 'https://github.com/ski-ski/skiski-app/issues/63',
         id: 247458749,
         number: 63,
@@ -327,15 +402,23 @@ describe('Repo model', () => {
           gravatar_id: '',
           url: 'https://api.github.com/users/michaelmurray6298',
           html_url: 'https://github.com/michaelmurray6298',
-          followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-          following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-          gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-          organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+          followers_url:
+      'https://api.github.com/users/michaelmurray6298/followers',
+          following_url:
+      'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+          gists_url:
+      'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+          starred_url:
+      'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/michaelmurray6298/subscriptions',
+          organizations_url:
+      'https://api.github.com/users/michaelmurray6298/orgs',
           repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-          events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+          events_url:
+      'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+          received_events_url:
+      'https://api.github.com/users/michaelmurray6298/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -350,14 +433,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/johanbmk',
           html_url: 'https://github.com/johanbmk',
           followers_url: 'https://api.github.com/users/johanbmk/followers',
-          following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/johanbmk/following{/other_user}',
           gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+          starred_url:
+      'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/johanbmk/subscriptions',
           organizations_url: 'https://api.github.com/users/johanbmk/orgs',
           repos_url: 'https://api.github.com/users/johanbmk/repos',
           events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+          received_events_url:
+      'https://api.github.com/users/johanbmk/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -370,14 +457,19 @@ describe('Repo model', () => {
             url: 'https://api.github.com/users/johanbmk',
             html_url: 'https://github.com/johanbmk',
             followers_url: 'https://api.github.com/users/johanbmk/followers',
-            following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+            following_url:
+       'https://api.github.com/users/johanbmk/following{/other_user}',
             gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-            starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-            subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+            starred_url:
+       'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+            subscriptions_url:
+       'https://api.github.com/users/johanbmk/subscriptions',
             organizations_url: 'https://api.github.com/users/johanbmk/orgs',
             repos_url: 'https://api.github.com/users/johanbmk/repos',
-            events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-            received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+            events_url:
+       'https://api.github.com/users/johanbmk/events{/privacy}',
+            received_events_url:
+       'https://api.github.com/users/johanbmk/received_events',
             type: 'User',
             site_admin: false,
           },
@@ -392,9 +484,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/62',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/62/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/62/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/62/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/62/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/62/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/62/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/62',
         id: 239889663,
         number: 62,
@@ -406,15 +501,23 @@ describe('Repo model', () => {
           gravatar_id: '',
           url: 'https://api.github.com/users/michaelmurray6298',
           html_url: 'https://github.com/michaelmurray6298',
-          followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-          following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-          gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-          organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+          followers_url:
+      'https://api.github.com/users/michaelmurray6298/followers',
+          following_url:
+      'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+          gists_url:
+      'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+          starred_url:
+      'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/michaelmurray6298/subscriptions',
+          organizations_url:
+      'https://api.github.com/users/michaelmurray6298/orgs',
           repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-          events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+          events_url:
+      'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+          received_events_url:
+      'https://api.github.com/users/michaelmurray6298/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -439,9 +542,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/61',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/61/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/61/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/61/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/61/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/61/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/61/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/61',
         id: 239851117,
         number: 61,
@@ -454,14 +560,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/johanbmk',
           html_url: 'https://github.com/johanbmk',
           followers_url: 'https://api.github.com/users/johanbmk/followers',
-          following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/johanbmk/following{/other_user}',
           gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+          starred_url:
+      'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/johanbmk/subscriptions',
           organizations_url: 'https://api.github.com/users/johanbmk/orgs',
           repos_url: 'https://api.github.com/users/johanbmk/repos',
           events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+          received_events_url:
+      'https://api.github.com/users/johanbmk/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -486,9 +596,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/60',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/60/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/60/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/60/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/60/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/60/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/60/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/60',
         id: 239643103,
         number: 60,
@@ -501,14 +614,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/johanbmk',
           html_url: 'https://github.com/johanbmk',
           followers_url: 'https://api.github.com/users/johanbmk/followers',
-          following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/johanbmk/following{/other_user}',
           gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+          starred_url:
+      'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/johanbmk/subscriptions',
           organizations_url: 'https://api.github.com/users/johanbmk/orgs',
           repos_url: 'https://api.github.com/users/johanbmk/repos',
           events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+          received_events_url:
+      'https://api.github.com/users/johanbmk/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -533,9 +650,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/59',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/59/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/59/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/59/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/59/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/59/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/59/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/59',
         id: 239642737,
         number: 59,
@@ -548,14 +668,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/johanbmk',
           html_url: 'https://github.com/johanbmk',
           followers_url: 'https://api.github.com/users/johanbmk/followers',
-          following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/johanbmk/following{/other_user}',
           gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+          starred_url:
+      'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/johanbmk/subscriptions',
           organizations_url: 'https://api.github.com/users/johanbmk/orgs',
           repos_url: 'https://api.github.com/users/johanbmk/repos',
           events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+          received_events_url:
+      'https://api.github.com/users/johanbmk/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -580,9 +704,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/58',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/58/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/58/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/58/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/58/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/58/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/58/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/58',
         id: 239642368,
         number: 58,
@@ -594,15 +721,23 @@ describe('Repo model', () => {
           gravatar_id: '',
           url: 'https://api.github.com/users/michaelmurray6298',
           html_url: 'https://github.com/michaelmurray6298',
-          followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-          following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-          gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-          organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+          followers_url:
+      'https://api.github.com/users/michaelmurray6298/followers',
+          following_url:
+      'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+          gists_url:
+      'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+          starred_url:
+      'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/michaelmurray6298/subscriptions',
+          organizations_url:
+      'https://api.github.com/users/michaelmurray6298/orgs',
           repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-          events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+          events_url:
+      'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+          received_events_url:
+      'https://api.github.com/users/michaelmurray6298/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -627,9 +762,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/57',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/57/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/57/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/57/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/57/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/57/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/57/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/57',
         id: 239533038,
         number: 57,
@@ -641,15 +779,23 @@ describe('Repo model', () => {
           gravatar_id: '',
           url: 'https://api.github.com/users/michaelmurray6298',
           html_url: 'https://github.com/michaelmurray6298',
-          followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-          following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-          gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-          organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+          followers_url:
+      'https://api.github.com/users/michaelmurray6298/followers',
+          following_url:
+      'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+          gists_url:
+      'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+          starred_url:
+      'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/michaelmurray6298/subscriptions',
+          organizations_url:
+      'https://api.github.com/users/michaelmurray6298/orgs',
           repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-          events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+          events_url:
+      'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+          received_events_url:
+      'https://api.github.com/users/michaelmurray6298/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -674,9 +820,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/56',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/56/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/56/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/56/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/56/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/56/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/56/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/56',
         id: 239528000,
         number: 56,
@@ -688,15 +837,23 @@ describe('Repo model', () => {
           gravatar_id: '',
           url: 'https://api.github.com/users/michaelmurray6298',
           html_url: 'https://github.com/michaelmurray6298',
-          followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-          following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-          gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-          organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+          followers_url:
+      'https://api.github.com/users/michaelmurray6298/followers',
+          following_url:
+      'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+          gists_url:
+      'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+          starred_url:
+      'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/michaelmurray6298/subscriptions',
+          organizations_url:
+      'https://api.github.com/users/michaelmurray6298/orgs',
           repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-          events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+          events_url:
+      'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+          received_events_url:
+      'https://api.github.com/users/michaelmurray6298/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -721,9 +878,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/55',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/55/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/55/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/55/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/55/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/55/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/55/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/55',
         id: 239526014,
         number: 55,
@@ -736,14 +896,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/johanbmk',
           html_url: 'https://github.com/johanbmk',
           followers_url: 'https://api.github.com/users/johanbmk/followers',
-          following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/johanbmk/following{/other_user}',
           gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+          starred_url:
+      'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/johanbmk/subscriptions',
           organizations_url: 'https://api.github.com/users/johanbmk/orgs',
           repos_url: 'https://api.github.com/users/johanbmk/repos',
           events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+          received_events_url:
+      'https://api.github.com/users/johanbmk/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -768,9 +932,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/54',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/54/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/54/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/54/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/54/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/54/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/54/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/54',
         id: 239349261,
         number: 54,
@@ -783,14 +950,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/johanbmk',
           html_url: 'https://github.com/johanbmk',
           followers_url: 'https://api.github.com/users/johanbmk/followers',
-          following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/johanbmk/following{/other_user}',
           gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+          starred_url:
+      'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/johanbmk/subscriptions',
           organizations_url: 'https://api.github.com/users/johanbmk/orgs',
           repos_url: 'https://api.github.com/users/johanbmk/repos',
           events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+          received_events_url:
+      'https://api.github.com/users/johanbmk/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -815,9 +986,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/53',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/53/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/53/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/53/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/53/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/53/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/53/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/53',
         id: 239348965,
         number: 53,
@@ -830,14 +1004,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/johanbmk',
           html_url: 'https://github.com/johanbmk',
           followers_url: 'https://api.github.com/users/johanbmk/followers',
-          following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/johanbmk/following{/other_user}',
           gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+          starred_url:
+      'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/johanbmk/subscriptions',
           organizations_url: 'https://api.github.com/users/johanbmk/orgs',
           repos_url: 'https://api.github.com/users/johanbmk/repos',
           events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+          received_events_url:
+      'https://api.github.com/users/johanbmk/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -862,9 +1040,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/52',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/52/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/52/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/52/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/52/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/52/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/52/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/52',
         id: 239346562,
         number: 52,
@@ -876,15 +1057,23 @@ describe('Repo model', () => {
           gravatar_id: '',
           url: 'https://api.github.com/users/michaelmurray6298',
           html_url: 'https://github.com/michaelmurray6298',
-          followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-          following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-          gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-          organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+          followers_url:
+      'https://api.github.com/users/michaelmurray6298/followers',
+          following_url:
+      'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+          gists_url:
+      'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+          starred_url:
+      'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/michaelmurray6298/subscriptions',
+          organizations_url:
+      'https://api.github.com/users/michaelmurray6298/orgs',
           repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-          events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+          events_url:
+      'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+          received_events_url:
+      'https://api.github.com/users/michaelmurray6298/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -909,9 +1098,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/51',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/51/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/51/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/51/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/51/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/51/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/51/events',
         html_url: 'https://github.com/ski-ski/skiski-app/issues/51',
         id: 239345383,
         number: 51,
@@ -924,14 +1116,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/johanbmk',
           html_url: 'https://github.com/johanbmk',
           followers_url: 'https://api.github.com/users/johanbmk/followers',
-          following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/johanbmk/following{/other_user}',
           gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+          starred_url:
+      'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/johanbmk/subscriptions',
           organizations_url: 'https://api.github.com/users/johanbmk/orgs',
           repos_url: 'https://api.github.com/users/johanbmk/repos',
           events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+          received_events_url:
+      'https://api.github.com/users/johanbmk/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -946,14 +1142,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/johanbmk',
           html_url: 'https://github.com/johanbmk',
           followers_url: 'https://api.github.com/users/johanbmk/followers',
-          following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/johanbmk/following{/other_user}',
           gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+          starred_url:
+      'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/johanbmk/subscriptions',
           organizations_url: 'https://api.github.com/users/johanbmk/orgs',
           repos_url: 'https://api.github.com/users/johanbmk/repos',
           events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+          received_events_url:
+      'https://api.github.com/users/johanbmk/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -966,14 +1166,19 @@ describe('Repo model', () => {
             url: 'https://api.github.com/users/johanbmk',
             html_url: 'https://github.com/johanbmk',
             followers_url: 'https://api.github.com/users/johanbmk/followers',
-            following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+            following_url:
+       'https://api.github.com/users/johanbmk/following{/other_user}',
             gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-            starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-            subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+            starred_url:
+       'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+            subscriptions_url:
+       'https://api.github.com/users/johanbmk/subscriptions',
             organizations_url: 'https://api.github.com/users/johanbmk/orgs',
             repos_url: 'https://api.github.com/users/johanbmk/repos',
-            events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-            received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+            events_url:
+       'https://api.github.com/users/johanbmk/events{/privacy}',
+            received_events_url:
+       'https://api.github.com/users/johanbmk/received_events',
             type: 'User',
             site_admin: false,
           },
@@ -988,9 +1193,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/50',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/50/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/50/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/50/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/50/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/50/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/50/events',
         html_url: 'https://github.com/ski-ski/skiski-app/issues/50',
         id: 239345325,
         number: 50,
@@ -1003,14 +1211,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/johanbmk',
           html_url: 'https://github.com/johanbmk',
           followers_url: 'https://api.github.com/users/johanbmk/followers',
-          following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/johanbmk/following{/other_user}',
           gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+          starred_url:
+      'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/johanbmk/subscriptions',
           organizations_url: 'https://api.github.com/users/johanbmk/orgs',
           repos_url: 'https://api.github.com/users/johanbmk/repos',
           events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+          received_events_url:
+      'https://api.github.com/users/johanbmk/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -1024,15 +1236,23 @@ describe('Repo model', () => {
           gravatar_id: '',
           url: 'https://api.github.com/users/michaelmurray6298',
           html_url: 'https://github.com/michaelmurray6298',
-          followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-          following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-          gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-          organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+          followers_url:
+      'https://api.github.com/users/michaelmurray6298/followers',
+          following_url:
+      'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+          gists_url:
+      'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+          starred_url:
+      'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/michaelmurray6298/subscriptions',
+          organizations_url:
+      'https://api.github.com/users/michaelmurray6298/orgs',
           repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-          events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+          events_url:
+      'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+          received_events_url:
+      'https://api.github.com/users/michaelmurray6298/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -1044,15 +1264,23 @@ describe('Repo model', () => {
             gravatar_id: '',
             url: 'https://api.github.com/users/michaelmurray6298',
             html_url: 'https://github.com/michaelmurray6298',
-            followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-            following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-            gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-            starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-            subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-            organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+            followers_url:
+       'https://api.github.com/users/michaelmurray6298/followers',
+            following_url:
+       'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+            gists_url:
+       'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+            starred_url:
+       'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+            subscriptions_url:
+       'https://api.github.com/users/michaelmurray6298/subscriptions',
+            organizations_url:
+       'https://api.github.com/users/michaelmurray6298/orgs',
             repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-            events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-            received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+            events_url:
+       'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+            received_events_url:
+       'https://api.github.com/users/michaelmurray6298/received_events',
             type: 'User',
             site_admin: false,
           },
@@ -1067,9 +1295,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/49',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/49/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/49/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/49/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/49/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/49/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/49/events',
         html_url: 'https://github.com/ski-ski/skiski-app/issues/49',
         id: 239345145,
         number: 49,
@@ -1082,14 +1313,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/johanbmk',
           html_url: 'https://github.com/johanbmk',
           followers_url: 'https://api.github.com/users/johanbmk/followers',
-          following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/johanbmk/following{/other_user}',
           gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+          starred_url:
+      'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/johanbmk/subscriptions',
           organizations_url: 'https://api.github.com/users/johanbmk/orgs',
           repos_url: 'https://api.github.com/users/johanbmk/repos',
           events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+          received_events_url:
+      'https://api.github.com/users/johanbmk/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -1104,14 +1339,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/johanbmk',
           html_url: 'https://github.com/johanbmk',
           followers_url: 'https://api.github.com/users/johanbmk/followers',
-          following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/johanbmk/following{/other_user}',
           gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+          starred_url:
+      'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/johanbmk/subscriptions',
           organizations_url: 'https://api.github.com/users/johanbmk/orgs',
           repos_url: 'https://api.github.com/users/johanbmk/repos',
           events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+          received_events_url:
+      'https://api.github.com/users/johanbmk/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -1124,14 +1363,19 @@ describe('Repo model', () => {
             url: 'https://api.github.com/users/johanbmk',
             html_url: 'https://github.com/johanbmk',
             followers_url: 'https://api.github.com/users/johanbmk/followers',
-            following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+            following_url:
+       'https://api.github.com/users/johanbmk/following{/other_user}',
             gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-            starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-            subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+            starred_url:
+       'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+            subscriptions_url:
+       'https://api.github.com/users/johanbmk/subscriptions',
             organizations_url: 'https://api.github.com/users/johanbmk/orgs',
             repos_url: 'https://api.github.com/users/johanbmk/repos',
-            events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-            received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+            events_url:
+       'https://api.github.com/users/johanbmk/events{/privacy}',
+            received_events_url:
+       'https://api.github.com/users/johanbmk/received_events',
             type: 'User',
             site_admin: false,
           },
@@ -1146,9 +1390,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/48',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/48/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/48/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/48/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/48/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/48/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/48/events',
         html_url: 'https://github.com/ski-ski/skiski-app/issues/48',
         id: 239345081,
         number: 48,
@@ -1161,14 +1408,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/johanbmk',
           html_url: 'https://github.com/johanbmk',
           followers_url: 'https://api.github.com/users/johanbmk/followers',
-          following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/johanbmk/following{/other_user}',
           gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+          starred_url:
+      'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/johanbmk/subscriptions',
           organizations_url: 'https://api.github.com/users/johanbmk/orgs',
           repos_url: 'https://api.github.com/users/johanbmk/repos',
           events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+          received_events_url:
+      'https://api.github.com/users/johanbmk/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -1182,15 +1433,23 @@ describe('Repo model', () => {
           gravatar_id: '',
           url: 'https://api.github.com/users/michaelmurray6298',
           html_url: 'https://github.com/michaelmurray6298',
-          followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-          following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-          gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-          organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+          followers_url:
+      'https://api.github.com/users/michaelmurray6298/followers',
+          following_url:
+      'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+          gists_url:
+      'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+          starred_url:
+      'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/michaelmurray6298/subscriptions',
+          organizations_url:
+      'https://api.github.com/users/michaelmurray6298/orgs',
           repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-          events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+          events_url:
+      'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+          received_events_url:
+      'https://api.github.com/users/michaelmurray6298/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -1202,15 +1461,23 @@ describe('Repo model', () => {
             gravatar_id: '',
             url: 'https://api.github.com/users/michaelmurray6298',
             html_url: 'https://github.com/michaelmurray6298',
-            followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-            following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-            gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-            starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-            subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-            organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+            followers_url:
+       'https://api.github.com/users/michaelmurray6298/followers',
+            following_url:
+       'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+            gists_url:
+       'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+            starred_url:
+       'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+            subscriptions_url:
+       'https://api.github.com/users/michaelmurray6298/subscriptions',
+            organizations_url:
+       'https://api.github.com/users/michaelmurray6298/orgs',
             repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-            events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-            received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+            events_url:
+       'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+            received_events_url:
+       'https://api.github.com/users/michaelmurray6298/received_events',
             type: 'User',
             site_admin: false,
           },
@@ -1225,9 +1492,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/47',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/47/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/47/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/47/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/47/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/47/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/47/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/47',
         id: 239344924,
         number: 47,
@@ -1239,15 +1509,23 @@ describe('Repo model', () => {
           gravatar_id: '',
           url: 'https://api.github.com/users/michaelmurray6298',
           html_url: 'https://github.com/michaelmurray6298',
-          followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-          following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-          gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-          organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+          followers_url:
+      'https://api.github.com/users/michaelmurray6298/followers',
+          following_url:
+      'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+          gists_url:
+      'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+          starred_url:
+      'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/michaelmurray6298/subscriptions',
+          organizations_url:
+      'https://api.github.com/users/michaelmurray6298/orgs',
           repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-          events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+          events_url:
+      'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+          received_events_url:
+      'https://api.github.com/users/michaelmurray6298/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -1272,9 +1550,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/46',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/46/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/46/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/46/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/46/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/46/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/46/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/46',
         id: 239330160,
         number: 46,
@@ -1286,15 +1567,23 @@ describe('Repo model', () => {
           gravatar_id: '',
           url: 'https://api.github.com/users/michaelmurray6298',
           html_url: 'https://github.com/michaelmurray6298',
-          followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-          following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-          gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-          organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+          followers_url:
+      'https://api.github.com/users/michaelmurray6298/followers',
+          following_url:
+      'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+          gists_url:
+      'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+          starred_url:
+      'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/michaelmurray6298/subscriptions',
+          organizations_url:
+      'https://api.github.com/users/michaelmurray6298/orgs',
           repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-          events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+          events_url:
+      'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+          received_events_url:
+      'https://api.github.com/users/michaelmurray6298/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -1319,9 +1608,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/45',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/45/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/45/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/45/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/45/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/45/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/45/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/45',
         id: 239316975,
         number: 45,
@@ -1334,14 +1626,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/johanbmk',
           html_url: 'https://github.com/johanbmk',
           followers_url: 'https://api.github.com/users/johanbmk/followers',
-          following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/johanbmk/following{/other_user}',
           gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+          starred_url:
+      'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/johanbmk/subscriptions',
           organizations_url: 'https://api.github.com/users/johanbmk/orgs',
           repos_url: 'https://api.github.com/users/johanbmk/repos',
           events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+          received_events_url:
+      'https://api.github.com/users/johanbmk/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -1366,9 +1662,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/44',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/44/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/44/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/44/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/44/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/44/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/44/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/44',
         id: 239306120,
         number: 44,
@@ -1381,14 +1680,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/johanbmk',
           html_url: 'https://github.com/johanbmk',
           followers_url: 'https://api.github.com/users/johanbmk/followers',
-          following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/johanbmk/following{/other_user}',
           gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+          starred_url:
+      'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/johanbmk/subscriptions',
           organizations_url: 'https://api.github.com/users/johanbmk/orgs',
           repos_url: 'https://api.github.com/users/johanbmk/repos',
           events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+          received_events_url:
+      'https://api.github.com/users/johanbmk/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -1413,9 +1716,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/43',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/43/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/43/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/43/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/43/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/43/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/43/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/43',
         id: 239304894,
         number: 43,
@@ -1427,15 +1733,23 @@ describe('Repo model', () => {
           gravatar_id: '',
           url: 'https://api.github.com/users/michaelmurray6298',
           html_url: 'https://github.com/michaelmurray6298',
-          followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-          following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-          gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-          organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+          followers_url:
+      'https://api.github.com/users/michaelmurray6298/followers',
+          following_url:
+      'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+          gists_url:
+      'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+          starred_url:
+      'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/michaelmurray6298/subscriptions',
+          organizations_url:
+      'https://api.github.com/users/michaelmurray6298/orgs',
           repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-          events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+          events_url:
+      'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+          received_events_url:
+      'https://api.github.com/users/michaelmurray6298/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -1460,9 +1774,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/42',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/42/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/42/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/42/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/42/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/42/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/42/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/42',
         id: 239268247,
         number: 42,
@@ -1474,15 +1791,23 @@ describe('Repo model', () => {
           gravatar_id: '',
           url: 'https://api.github.com/users/michaelmurray6298',
           html_url: 'https://github.com/michaelmurray6298',
-          followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-          following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-          gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-          organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+          followers_url:
+      'https://api.github.com/users/michaelmurray6298/followers',
+          following_url:
+      'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+          gists_url:
+      'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+          starred_url:
+      'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/michaelmurray6298/subscriptions',
+          organizations_url:
+      'https://api.github.com/users/michaelmurray6298/orgs',
           repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-          events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+          events_url:
+      'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+          received_events_url:
+      'https://api.github.com/users/michaelmurray6298/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -1507,9 +1832,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/41',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/41/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/41/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/41/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/41/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/41/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/41/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/41',
         id: 239243773,
         number: 41,
@@ -1522,14 +1850,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/johanbmk',
           html_url: 'https://github.com/johanbmk',
           followers_url: 'https://api.github.com/users/johanbmk/followers',
-          following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/johanbmk/following{/other_user}',
           gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+          starred_url:
+      'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/johanbmk/subscriptions',
           organizations_url: 'https://api.github.com/users/johanbmk/orgs',
           repos_url: 'https://api.github.com/users/johanbmk/repos',
           events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+          received_events_url:
+      'https://api.github.com/users/johanbmk/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -1554,9 +1886,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/40',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/40/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/40/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/40/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/40/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/40/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/40/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/40',
         id: 239228979,
         number: 40,
@@ -1568,15 +1903,23 @@ describe('Repo model', () => {
           gravatar_id: '',
           url: 'https://api.github.com/users/michaelmurray6298',
           html_url: 'https://github.com/michaelmurray6298',
-          followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-          following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-          gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-          organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+          followers_url:
+      'https://api.github.com/users/michaelmurray6298/followers',
+          following_url:
+      'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+          gists_url:
+      'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+          starred_url:
+      'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/michaelmurray6298/subscriptions',
+          organizations_url:
+      'https://api.github.com/users/michaelmurray6298/orgs',
           repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-          events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+          events_url:
+      'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+          received_events_url:
+      'https://api.github.com/users/michaelmurray6298/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -1601,9 +1944,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/39',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/39/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/39/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/39/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/39/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/39/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/39/events',
         html_url: 'https://github.com/ski-ski/skiski-app/issues/39',
         id: 239220141,
         number: 39,
@@ -1616,14 +1962,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/johanbmk',
           html_url: 'https://github.com/johanbmk',
           followers_url: 'https://api.github.com/users/johanbmk/followers',
-          following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/johanbmk/following{/other_user}',
           gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+          starred_url:
+      'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/johanbmk/subscriptions',
           organizations_url: 'https://api.github.com/users/johanbmk/orgs',
           repos_url: 'https://api.github.com/users/johanbmk/repos',
           events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+          received_events_url:
+      'https://api.github.com/users/johanbmk/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -1638,14 +1988,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/johanbmk',
           html_url: 'https://github.com/johanbmk',
           followers_url: 'https://api.github.com/users/johanbmk/followers',
-          following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/johanbmk/following{/other_user}',
           gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+          starred_url:
+      'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/johanbmk/subscriptions',
           organizations_url: 'https://api.github.com/users/johanbmk/orgs',
           repos_url: 'https://api.github.com/users/johanbmk/repos',
           events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+          received_events_url:
+      'https://api.github.com/users/johanbmk/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -1658,14 +2012,19 @@ describe('Repo model', () => {
             url: 'https://api.github.com/users/johanbmk',
             html_url: 'https://github.com/johanbmk',
             followers_url: 'https://api.github.com/users/johanbmk/followers',
-            following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+            following_url:
+       'https://api.github.com/users/johanbmk/following{/other_user}',
             gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-            starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-            subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+            starred_url:
+       'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+            subscriptions_url:
+       'https://api.github.com/users/johanbmk/subscriptions',
             organizations_url: 'https://api.github.com/users/johanbmk/orgs',
             repos_url: 'https://api.github.com/users/johanbmk/repos',
-            events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-            received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+            events_url:
+       'https://api.github.com/users/johanbmk/events{/privacy}',
+            received_events_url:
+       'https://api.github.com/users/johanbmk/received_events',
             type: 'User',
             site_admin: false,
           },
@@ -1680,9 +2039,12 @@ describe('Repo model', () => {
       {
         url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/38',
         repository_url: 'https://api.github.com/repos/ski-ski/skiski-app',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/38/labels{/name}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/38/comments',
-        events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/38/events',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/38/labels{/name}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/38/comments',
+        events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/38/events',
         html_url: 'https://github.com/ski-ski/skiski-app/pull/38',
         id: 239057242,
         number: 38,
@@ -1695,14 +2057,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/johanbmk',
           html_url: 'https://github.com/johanbmk',
           followers_url: 'https://api.github.com/users/johanbmk/followers',
-          following_url: 'https://api.github.com/users/johanbmk/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/johanbmk/following{/other_user}',
           gists_url: 'https://api.github.com/users/johanbmk/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/johanbmk/subscriptions',
+          starred_url:
+      'https://api.github.com/users/johanbmk/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/johanbmk/subscriptions',
           organizations_url: 'https://api.github.com/users/johanbmk/orgs',
           repos_url: 'https://api.github.com/users/johanbmk/repos',
           events_url: 'https://api.github.com/users/johanbmk/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/johanbmk/received_events',
+          received_events_url:
+      'https://api.github.com/users/johanbmk/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -1726,9 +2092,12 @@ describe('Repo model', () => {
       },
     ];
     nock('https://api.github.com')
-      .get(`/repos/ski-ski/skiski-app/issues?state=all&access_token=${process.env.TKN}`)
+      .get(
+        `/repos/ski-ski/skiski-app/issues?state=all&access_token=${process.env
+          .TKN}`,
+      )
       .reply(200, fetchIssueResponse);
-    const issue = await repo.fetchIssue();
+    const issue = await data.issue;
     expect(issue[0].issue.id).to.equal(fetchIssueResponse[0].id);
   });
   after((done) => {
@@ -1754,15 +2123,23 @@ describe('Repo model', () => {
           gravatar_id: '',
           url: 'https://api.github.com/users/michaelmurray6298',
           html_url: 'https://github.com/michaelmurray6298',
-          followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-          following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-          gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-          organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+          followers_url:
+      'https://api.github.com/users/michaelmurray6298/followers',
+          following_url:
+      'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+          gists_url:
+      'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+          starred_url:
+      'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/michaelmurray6298/subscriptions',
+          organizations_url:
+      'https://api.github.com/users/michaelmurray6298/orgs',
           repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-          events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+          events_url:
+      'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+          received_events_url:
+      'https://api.github.com/users/michaelmurray6298/received_events',
           type: 'User',
           site_admin: false,
         },
@@ -1776,11 +2153,16 @@ describe('Repo model', () => {
         assignees: [],
         requested_reviewers: [],
         milestone: null,
-        commits_url: 'https://api.github.com/repos/ski-ski/skiski-app/pulls/68/commits',
-        review_comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/pulls/68/comments',
-        review_comment_url: 'https://api.github.com/repos/ski-ski/skiski-app/pulls/comments{/number}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/68/comments',
-        statuses_url: 'https://api.github.com/repos/ski-ski/skiski-app/statuses/324b698a9e7193a0abb42cf7d5d6d8a777b7bfbf',
+        commits_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/pulls/68/commits',
+        review_comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/pulls/68/comments',
+        review_comment_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/pulls/comments{/number}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/68/comments',
+        statuses_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/statuses/324b698a9e7193a0abb42cf7d5d6d8a777b7bfbf',
         head: {
           label: 'ski-ski:master',
           ref: 'master',
@@ -1793,14 +2175,18 @@ describe('Repo model', () => {
             url: 'https://api.github.com/users/ski-ski',
             html_url: 'https://github.com/ski-ski',
             followers_url: 'https://api.github.com/users/ski-ski/followers',
-            following_url: 'https://api.github.com/users/ski-ski/following{/other_user}',
+            following_url:
+       'https://api.github.com/users/ski-ski/following{/other_user}',
             gists_url: 'https://api.github.com/users/ski-ski/gists{/gist_id}',
-            starred_url: 'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
-            subscriptions_url: 'https://api.github.com/users/ski-ski/subscriptions',
+            starred_url:
+       'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
+            subscriptions_url:
+       'https://api.github.com/users/ski-ski/subscriptions',
             organizations_url: 'https://api.github.com/users/ski-ski/orgs',
             repos_url: 'https://api.github.com/users/ski-ski/repos',
             events_url: 'https://api.github.com/users/ski-ski/events{/privacy}',
-            received_events_url: 'https://api.github.com/users/ski-ski/received_events',
+            received_events_url:
+       'https://api.github.com/users/ski-ski/received_events',
             type: 'Organization',
             site_admin: false,
           },
@@ -1811,19 +2197,25 @@ describe('Repo model', () => {
             owner: {
               login: 'ski-ski',
               id: 29638033,
-              avatar_url: 'https://avatars3.githubusercontent.com/u/29638033?v=4',
+              avatar_url:
+        'https://avatars3.githubusercontent.com/u/29638033?v=4',
               gravatar_id: '',
               url: 'https://api.github.com/users/ski-ski',
               html_url: 'https://github.com/ski-ski',
               followers_url: 'https://api.github.com/users/ski-ski/followers',
-              following_url: 'https://api.github.com/users/ski-ski/following{/other_user}',
+              following_url:
+        'https://api.github.com/users/ski-ski/following{/other_user}',
               gists_url: 'https://api.github.com/users/ski-ski/gists{/gist_id}',
-              starred_url: 'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
-              subscriptions_url: 'https://api.github.com/users/ski-ski/subscriptions',
+              starred_url:
+        'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
+              subscriptions_url:
+        'https://api.github.com/users/ski-ski/subscriptions',
               organizations_url: 'https://api.github.com/users/ski-ski/orgs',
               repos_url: 'https://api.github.com/users/ski-ski/repos',
-              events_url: 'https://api.github.com/users/ski-ski/events{/privacy}',
-              received_events_url: 'https://api.github.com/users/ski-ski/received_events',
+              events_url:
+        'https://api.github.com/users/ski-ski/events{/privacy}',
+              received_events_url:
+        'https://api.github.com/users/ski-ski/received_events',
               type: 'Organization',
               site_admin: false,
             },
@@ -1833,41 +2225,73 @@ describe('Repo model', () => {
             fork: false,
             url: 'https://api.github.com/repos/ski-ski/skiski-app',
             forks_url: 'https://api.github.com/repos/ski-ski/skiski-app/forks',
-            keys_url: 'https://api.github.com/repos/ski-ski/skiski-app/keys{/key_id}',
-            collaborators_url: 'https://api.github.com/repos/ski-ski/skiski-app/collaborators{/collaborator}',
+            keys_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/keys{/key_id}',
+            collaborators_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/collaborators{/collaborator}',
             teams_url: 'https://api.github.com/repos/ski-ski/skiski-app/teams',
             hooks_url: 'https://api.github.com/repos/ski-ski/skiski-app/hooks',
-            issue_events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/events{/number}',
-            events_url: 'https://api.github.com/repos/ski-ski/skiski-app/events',
-            assignees_url: 'https://api.github.com/repos/ski-ski/skiski-app/assignees{/user}',
-            branches_url: 'https://api.github.com/repos/ski-ski/skiski-app/branches{/branch}',
+            issue_events_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/issues/events{/number}',
+            events_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/events',
+            assignees_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/assignees{/user}',
+            branches_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/branches{/branch}',
             tags_url: 'https://api.github.com/repos/ski-ski/skiski-app/tags',
-            blobs_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/blobs{/sha}',
-            git_tags_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/tags{/sha}',
-            git_refs_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/refs{/sha}',
-            trees_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/trees{/sha}',
-            statuses_url: 'https://api.github.com/repos/ski-ski/skiski-app/statuses/{sha}',
-            languages_url: 'https://api.github.com/repos/ski-ski/skiski-app/languages',
-            stargazers_url: 'https://api.github.com/repos/ski-ski/skiski-app/stargazers',
-            contributors_url: 'https://api.github.com/repos/ski-ski/skiski-app/contributors',
-            subscribers_url: 'https://api.github.com/repos/ski-ski/skiski-app/subscribers',
-            subscription_url: 'https://api.github.com/repos/ski-ski/skiski-app/subscription',
-            commits_url: 'https://api.github.com/repos/ski-ski/skiski-app/commits{/sha}',
-            git_commits_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/commits{/sha}',
-            comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/comments{/number}',
-            issue_comment_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/comments{/number}',
-            contents_url: 'https://api.github.com/repos/ski-ski/skiski-app/contents/{+path}',
-            compare_url: 'https://api.github.com/repos/ski-ski/skiski-app/compare/{base}...{head}',
-            merges_url: 'https://api.github.com/repos/ski-ski/skiski-app/merges',
-            archive_url: 'https://api.github.com/repos/ski-ski/skiski-app/{archive_format}{/ref}',
-            downloads_url: 'https://api.github.com/repos/ski-ski/skiski-app/downloads',
-            issues_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues{/number}',
-            pulls_url: 'https://api.github.com/repos/ski-ski/skiski-app/pulls{/number}',
-            milestones_url: 'https://api.github.com/repos/ski-ski/skiski-app/milestones{/number}',
-            notifications_url: 'https://api.github.com/repos/ski-ski/skiski-app/notifications{?since,all,participating}',
-            labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/labels{/name}',
-            releases_url: 'https://api.github.com/repos/ski-ski/skiski-app/releases{/id}',
-            deployments_url: 'https://api.github.com/repos/ski-ski/skiski-app/deployments',
+            blobs_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/git/blobs{/sha}',
+            git_tags_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/git/tags{/sha}',
+            git_refs_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/git/refs{/sha}',
+            trees_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/git/trees{/sha}',
+            statuses_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/statuses/{sha}',
+            languages_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/languages',
+            stargazers_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/stargazers',
+            contributors_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/contributors',
+            subscribers_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/subscribers',
+            subscription_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/subscription',
+            commits_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/commits{/sha}',
+            git_commits_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/git/commits{/sha}',
+            comments_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/comments{/number}',
+            issue_comment_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/issues/comments{/number}',
+            contents_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/contents/{+path}',
+            compare_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/compare/{base}...{head}',
+            merges_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/merges',
+            archive_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/{archive_format}{/ref}',
+            downloads_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/downloads',
+            issues_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/issues{/number}',
+            pulls_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/pulls{/number}',
+            milestones_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/milestones{/number}',
+            notifications_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/notifications{?since,all,participating}',
+            labels_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/labels{/name}',
+            releases_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/releases{/id}',
+            deployments_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/deployments',
             created_at: '2017-06-22T18:08:21Z',
             updated_at: '2017-06-23T22:48:38Z',
             pushed_at: '2017-08-03T02:23:38Z',
@@ -1906,14 +2330,18 @@ describe('Repo model', () => {
             url: 'https://api.github.com/users/ski-ski',
             html_url: 'https://github.com/ski-ski',
             followers_url: 'https://api.github.com/users/ski-ski/followers',
-            following_url: 'https://api.github.com/users/ski-ski/following{/other_user}',
+            following_url:
+       'https://api.github.com/users/ski-ski/following{/other_user}',
             gists_url: 'https://api.github.com/users/ski-ski/gists{/gist_id}',
-            starred_url: 'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
-            subscriptions_url: 'https://api.github.com/users/ski-ski/subscriptions',
+            starred_url:
+       'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
+            subscriptions_url:
+       'https://api.github.com/users/ski-ski/subscriptions',
             organizations_url: 'https://api.github.com/users/ski-ski/orgs',
             repos_url: 'https://api.github.com/users/ski-ski/repos',
             events_url: 'https://api.github.com/users/ski-ski/events{/privacy}',
-            received_events_url: 'https://api.github.com/users/ski-ski/received_events',
+            received_events_url:
+       'https://api.github.com/users/ski-ski/received_events',
             type: 'Organization',
             site_admin: false,
           },
@@ -1924,19 +2352,25 @@ describe('Repo model', () => {
             owner: {
               login: 'ski-ski',
               id: 29638033,
-              avatar_url: 'https://avatars3.githubusercontent.com/u/29638033?v=4',
+              avatar_url:
+        'https://avatars3.githubusercontent.com/u/29638033?v=4',
               gravatar_id: '',
               url: 'https://api.github.com/users/ski-ski',
               html_url: 'https://github.com/ski-ski',
               followers_url: 'https://api.github.com/users/ski-ski/followers',
-              following_url: 'https://api.github.com/users/ski-ski/following{/other_user}',
+              following_url:
+        'https://api.github.com/users/ski-ski/following{/other_user}',
               gists_url: 'https://api.github.com/users/ski-ski/gists{/gist_id}',
-              starred_url: 'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
-              subscriptions_url: 'https://api.github.com/users/ski-ski/subscriptions',
+              starred_url:
+        'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
+              subscriptions_url:
+        'https://api.github.com/users/ski-ski/subscriptions',
               organizations_url: 'https://api.github.com/users/ski-ski/orgs',
               repos_url: 'https://api.github.com/users/ski-ski/repos',
-              events_url: 'https://api.github.com/users/ski-ski/events{/privacy}',
-              received_events_url: 'https://api.github.com/users/ski-ski/received_events',
+              events_url:
+        'https://api.github.com/users/ski-ski/events{/privacy}',
+              received_events_url:
+        'https://api.github.com/users/ski-ski/received_events',
               type: 'Organization',
               site_admin: false,
             },
@@ -1946,41 +2380,73 @@ describe('Repo model', () => {
             fork: false,
             url: 'https://api.github.com/repos/ski-ski/skiski-app',
             forks_url: 'https://api.github.com/repos/ski-ski/skiski-app/forks',
-            keys_url: 'https://api.github.com/repos/ski-ski/skiski-app/keys{/key_id}',
-            collaborators_url: 'https://api.github.com/repos/ski-ski/skiski-app/collaborators{/collaborator}',
+            keys_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/keys{/key_id}',
+            collaborators_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/collaborators{/collaborator}',
             teams_url: 'https://api.github.com/repos/ski-ski/skiski-app/teams',
             hooks_url: 'https://api.github.com/repos/ski-ski/skiski-app/hooks',
-            issue_events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/events{/number}',
-            events_url: 'https://api.github.com/repos/ski-ski/skiski-app/events',
-            assignees_url: 'https://api.github.com/repos/ski-ski/skiski-app/assignees{/user}',
-            branches_url: 'https://api.github.com/repos/ski-ski/skiski-app/branches{/branch}',
+            issue_events_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/issues/events{/number}',
+            events_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/events',
+            assignees_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/assignees{/user}',
+            branches_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/branches{/branch}',
             tags_url: 'https://api.github.com/repos/ski-ski/skiski-app/tags',
-            blobs_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/blobs{/sha}',
-            git_tags_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/tags{/sha}',
-            git_refs_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/refs{/sha}',
-            trees_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/trees{/sha}',
-            statuses_url: 'https://api.github.com/repos/ski-ski/skiski-app/statuses/{sha}',
-            languages_url: 'https://api.github.com/repos/ski-ski/skiski-app/languages',
-            stargazers_url: 'https://api.github.com/repos/ski-ski/skiski-app/stargazers',
-            contributors_url: 'https://api.github.com/repos/ski-ski/skiski-app/contributors',
-            subscribers_url: 'https://api.github.com/repos/ski-ski/skiski-app/subscribers',
-            subscription_url: 'https://api.github.com/repos/ski-ski/skiski-app/subscription',
-            commits_url: 'https://api.github.com/repos/ski-ski/skiski-app/commits{/sha}',
-            git_commits_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/commits{/sha}',
-            comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/comments{/number}',
-            issue_comment_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/comments{/number}',
-            contents_url: 'https://api.github.com/repos/ski-ski/skiski-app/contents/{+path}',
-            compare_url: 'https://api.github.com/repos/ski-ski/skiski-app/compare/{base}...{head}',
-            merges_url: 'https://api.github.com/repos/ski-ski/skiski-app/merges',
-            archive_url: 'https://api.github.com/repos/ski-ski/skiski-app/{archive_format}{/ref}',
-            downloads_url: 'https://api.github.com/repos/ski-ski/skiski-app/downloads',
-            issues_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues{/number}',
-            pulls_url: 'https://api.github.com/repos/ski-ski/skiski-app/pulls{/number}',
-            milestones_url: 'https://api.github.com/repos/ski-ski/skiski-app/milestones{/number}',
-            notifications_url: 'https://api.github.com/repos/ski-ski/skiski-app/notifications{?since,all,participating}',
-            labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/labels{/name}',
-            releases_url: 'https://api.github.com/repos/ski-ski/skiski-app/releases{/id}',
-            deployments_url: 'https://api.github.com/repos/ski-ski/skiski-app/deployments',
+            blobs_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/git/blobs{/sha}',
+            git_tags_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/git/tags{/sha}',
+            git_refs_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/git/refs{/sha}',
+            trees_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/git/trees{/sha}',
+            statuses_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/statuses/{sha}',
+            languages_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/languages',
+            stargazers_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/stargazers',
+            contributors_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/contributors',
+            subscribers_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/subscribers',
+            subscription_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/subscription',
+            commits_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/commits{/sha}',
+            git_commits_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/git/commits{/sha}',
+            comments_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/comments{/number}',
+            issue_comment_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/issues/comments{/number}',
+            contents_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/contents/{+path}',
+            compare_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/compare/{base}...{head}',
+            merges_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/merges',
+            archive_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/{archive_format}{/ref}',
+            downloads_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/downloads',
+            issues_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/issues{/number}',
+            pulls_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/pulls{/number}',
+            milestones_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/milestones{/number}',
+            notifications_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/notifications{?since,all,participating}',
+            labels_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/labels{/name}',
+            releases_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/releases{/id}',
+            deployments_url:
+       'https://api.github.com/repos/ski-ski/skiski-app/deployments',
             created_at: '2017-06-22T18:08:21Z',
             updated_at: '2017-06-23T22:48:38Z',
             pushed_at: '2017-08-03T02:23:38Z',
@@ -2018,24 +2484,29 @@ describe('Repo model', () => {
             href: 'https://api.github.com/repos/ski-ski/skiski-app/issues/68',
           },
           comments: {
-            href: 'https://api.github.com/repos/ski-ski/skiski-app/issues/68/comments',
+            href:
+       'https://api.github.com/repos/ski-ski/skiski-app/issues/68/comments',
           },
           review_comments: {
-            href: 'https://api.github.com/repos/ski-ski/skiski-app/pulls/68/comments',
+            href:
+       'https://api.github.com/repos/ski-ski/skiski-app/pulls/68/comments',
           },
           review_comment: {
-            href: 'https://api.github.com/repos/ski-ski/skiski-app/pulls/comments{/number}',
+            href:
+       'https://api.github.com/repos/ski-ski/skiski-app/pulls/comments{/number}',
           },
           commits: {
-            href: 'https://api.github.com/repos/ski-ski/skiski-app/pulls/68/commits',
+            href:
+       'https://api.github.com/repos/ski-ski/skiski-app/pulls/68/commits',
           },
           statuses: {
-            href: 'https://api.github.com/repos/ski-ski/skiski-app/statuses/324b698a9e7193a0abb42cf7d5d6d8a777b7bfbf',
+            href:
+       'https://api.github.com/repos/ski-ski/skiski-app/statuses/324b698a9e7193a0abb42cf7d5d6d8a777b7bfbf',
           },
         },
       },
     ];
-    const fetchPullRequestResponse = [{
+    const fetchPullRequestResponse = {
       url: 'https://api.github.com/repos/ski-ski/skiski-app/pulls/68',
       id: 133846622,
       html_url: 'https://github.com/ski-ski/skiski-app/pull/68',
@@ -2053,15 +2524,23 @@ describe('Repo model', () => {
         gravatar_id: '',
         url: 'https://api.github.com/users/michaelmurray6298',
         html_url: 'https://github.com/michaelmurray6298',
-        followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
-        following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
-        gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
-        starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
-        subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
-        organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+        followers_url:
+     'https://api.github.com/users/michaelmurray6298/followers',
+        following_url:
+     'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+        gists_url:
+     'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+        starred_url:
+     'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+        subscriptions_url:
+     'https://api.github.com/users/michaelmurray6298/subscriptions',
+        organizations_url:
+     'https://api.github.com/users/michaelmurray6298/orgs',
         repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
-        events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
-        received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+        events_url:
+     'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+        received_events_url:
+     'https://api.github.com/users/michaelmurray6298/received_events',
         type: 'User',
         site_admin: false,
       },
@@ -2075,11 +2554,16 @@ describe('Repo model', () => {
       assignees: [],
       requested_reviewers: [],
       milestone: null,
-      commits_url: 'https://api.github.com/repos/ski-ski/skiski-app/pulls/68/commits',
-      review_comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/pulls/68/comments',
-      review_comment_url: 'https://api.github.com/repos/ski-ski/skiski-app/pulls/comments{/number}',
-      comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/68/comments',
-      statuses_url: 'https://api.github.com/repos/ski-ski/skiski-app/statuses/324b698a9e7193a0abb42cf7d5d6d8a777b7bfbf',
+      commits_url:
+    'https://api.github.com/repos/ski-ski/skiski-app/pulls/68/commits',
+      review_comments_url:
+    'https://api.github.com/repos/ski-ski/skiski-app/pulls/68/comments',
+      review_comment_url:
+    'https://api.github.com/repos/ski-ski/skiski-app/pulls/comments{/number}',
+      comments_url:
+    'https://api.github.com/repos/ski-ski/skiski-app/issues/68/comments',
+      statuses_url:
+    'https://api.github.com/repos/ski-ski/skiski-app/statuses/324b698a9e7193a0abb42cf7d5d6d8a777b7bfbf',
       head: {
         label: 'ski-ski:master',
         ref: 'master',
@@ -2092,14 +2576,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/ski-ski',
           html_url: 'https://github.com/ski-ski',
           followers_url: 'https://api.github.com/users/ski-ski/followers',
-          following_url: 'https://api.github.com/users/ski-ski/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/ski-ski/following{/other_user}',
           gists_url: 'https://api.github.com/users/ski-ski/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/ski-ski/subscriptions',
+          starred_url:
+      'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/ski-ski/subscriptions',
           organizations_url: 'https://api.github.com/users/ski-ski/orgs',
           repos_url: 'https://api.github.com/users/ski-ski/repos',
           events_url: 'https://api.github.com/users/ski-ski/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/ski-ski/received_events',
+          received_events_url:
+      'https://api.github.com/users/ski-ski/received_events',
           type: 'Organization',
           site_admin: false,
         },
@@ -2115,14 +2603,18 @@ describe('Repo model', () => {
             url: 'https://api.github.com/users/ski-ski',
             html_url: 'https://github.com/ski-ski',
             followers_url: 'https://api.github.com/users/ski-ski/followers',
-            following_url: 'https://api.github.com/users/ski-ski/following{/other_user}',
+            following_url:
+       'https://api.github.com/users/ski-ski/following{/other_user}',
             gists_url: 'https://api.github.com/users/ski-ski/gists{/gist_id}',
-            starred_url: 'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
-            subscriptions_url: 'https://api.github.com/users/ski-ski/subscriptions',
+            starred_url:
+       'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
+            subscriptions_url:
+       'https://api.github.com/users/ski-ski/subscriptions',
             organizations_url: 'https://api.github.com/users/ski-ski/orgs',
             repos_url: 'https://api.github.com/users/ski-ski/repos',
             events_url: 'https://api.github.com/users/ski-ski/events{/privacy}',
-            received_events_url: 'https://api.github.com/users/ski-ski/received_events',
+            received_events_url:
+       'https://api.github.com/users/ski-ski/received_events',
             type: 'Organization',
             site_admin: false,
           },
@@ -2132,41 +2624,71 @@ describe('Repo model', () => {
           fork: false,
           url: 'https://api.github.com/repos/ski-ski/skiski-app',
           forks_url: 'https://api.github.com/repos/ski-ski/skiski-app/forks',
-          keys_url: 'https://api.github.com/repos/ski-ski/skiski-app/keys{/key_id}',
-          collaborators_url: 'https://api.github.com/repos/ski-ski/skiski-app/collaborators{/collaborator}',
+          keys_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/keys{/key_id}',
+          collaborators_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/collaborators{/collaborator}',
           teams_url: 'https://api.github.com/repos/ski-ski/skiski-app/teams',
           hooks_url: 'https://api.github.com/repos/ski-ski/skiski-app/hooks',
-          issue_events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/events{/number}',
+          issue_events_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/issues/events{/number}',
           events_url: 'https://api.github.com/repos/ski-ski/skiski-app/events',
-          assignees_url: 'https://api.github.com/repos/ski-ski/skiski-app/assignees{/user}',
-          branches_url: 'https://api.github.com/repos/ski-ski/skiski-app/branches{/branch}',
+          assignees_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/assignees{/user}',
+          branches_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/branches{/branch}',
           tags_url: 'https://api.github.com/repos/ski-ski/skiski-app/tags',
-          blobs_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/blobs{/sha}',
-          git_tags_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/tags{/sha}',
-          git_refs_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/refs{/sha}',
-          trees_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/trees{/sha}',
-          statuses_url: 'https://api.github.com/repos/ski-ski/skiski-app/statuses/{sha}',
-          languages_url: 'https://api.github.com/repos/ski-ski/skiski-app/languages',
-          stargazers_url: 'https://api.github.com/repos/ski-ski/skiski-app/stargazers',
-          contributors_url: 'https://api.github.com/repos/ski-ski/skiski-app/contributors',
-          subscribers_url: 'https://api.github.com/repos/ski-ski/skiski-app/subscribers',
-          subscription_url: 'https://api.github.com/repos/ski-ski/skiski-app/subscription',
-          commits_url: 'https://api.github.com/repos/ski-ski/skiski-app/commits{/sha}',
-          git_commits_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/commits{/sha}',
-          comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/comments{/number}',
-          issue_comment_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/comments{/number}',
-          contents_url: 'https://api.github.com/repos/ski-ski/skiski-app/contents/{+path}',
-          compare_url: 'https://api.github.com/repos/ski-ski/skiski-app/compare/{base}...{head}',
+          blobs_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/git/blobs{/sha}',
+          git_tags_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/git/tags{/sha}',
+          git_refs_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/git/refs{/sha}',
+          trees_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/git/trees{/sha}',
+          statuses_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/statuses/{sha}',
+          languages_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/languages',
+          stargazers_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/stargazers',
+          contributors_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/contributors',
+          subscribers_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/subscribers',
+          subscription_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/subscription',
+          commits_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/commits{/sha}',
+          git_commits_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/git/commits{/sha}',
+          comments_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/comments{/number}',
+          issue_comment_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/issues/comments{/number}',
+          contents_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/contents/{+path}',
+          compare_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/compare/{base}...{head}',
           merges_url: 'https://api.github.com/repos/ski-ski/skiski-app/merges',
-          archive_url: 'https://api.github.com/repos/ski-ski/skiski-app/{archive_format}{/ref}',
-          downloads_url: 'https://api.github.com/repos/ski-ski/skiski-app/downloads',
-          issues_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues{/number}',
-          pulls_url: 'https://api.github.com/repos/ski-ski/skiski-app/pulls{/number}',
-          milestones_url: 'https://api.github.com/repos/ski-ski/skiski-app/milestones{/number}',
-          notifications_url: 'https://api.github.com/repos/ski-ski/skiski-app/notifications{?since,all,participating}',
-          labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/labels{/name}',
-          releases_url: 'https://api.github.com/repos/ski-ski/skiski-app/releases{/id}',
-          deployments_url: 'https://api.github.com/repos/ski-ski/skiski-app/deployments',
+          archive_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/{archive_format}{/ref}',
+          downloads_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/downloads',
+          issues_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/issues{/number}',
+          pulls_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/pulls{/number}',
+          milestones_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/milestones{/number}',
+          notifications_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/notifications{?since,all,participating}',
+          labels_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/labels{/name}',
+          releases_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/releases{/id}',
+          deployments_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/deployments',
           created_at: '2017-06-22T18:08:21Z',
           updated_at: '2017-06-23T22:48:38Z',
           pushed_at: '2017-08-03T02:23:38Z',
@@ -2205,14 +2727,18 @@ describe('Repo model', () => {
           url: 'https://api.github.com/users/ski-ski',
           html_url: 'https://github.com/ski-ski',
           followers_url: 'https://api.github.com/users/ski-ski/followers',
-          following_url: 'https://api.github.com/users/ski-ski/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/ski-ski/following{/other_user}',
           gists_url: 'https://api.github.com/users/ski-ski/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/ski-ski/subscriptions',
+          starred_url:
+      'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/ski-ski/subscriptions',
           organizations_url: 'https://api.github.com/users/ski-ski/orgs',
           repos_url: 'https://api.github.com/users/ski-ski/repos',
           events_url: 'https://api.github.com/users/ski-ski/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/ski-ski/received_events',
+          received_events_url:
+      'https://api.github.com/users/ski-ski/received_events',
           type: 'Organization',
           site_admin: false,
         },
@@ -2228,14 +2754,18 @@ describe('Repo model', () => {
             url: 'https://api.github.com/users/ski-ski',
             html_url: 'https://github.com/ski-ski',
             followers_url: 'https://api.github.com/users/ski-ski/followers',
-            following_url: 'https://api.github.com/users/ski-ski/following{/other_user}',
+            following_url:
+       'https://api.github.com/users/ski-ski/following{/other_user}',
             gists_url: 'https://api.github.com/users/ski-ski/gists{/gist_id}',
-            starred_url: 'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
-            subscriptions_url: 'https://api.github.com/users/ski-ski/subscriptions',
+            starred_url:
+       'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
+            subscriptions_url:
+       'https://api.github.com/users/ski-ski/subscriptions',
             organizations_url: 'https://api.github.com/users/ski-ski/orgs',
             repos_url: 'https://api.github.com/users/ski-ski/repos',
             events_url: 'https://api.github.com/users/ski-ski/events{/privacy}',
-            received_events_url: 'https://api.github.com/users/ski-ski/received_events',
+            received_events_url:
+       'https://api.github.com/users/ski-ski/received_events',
             type: 'Organization',
             site_admin: false,
           },
@@ -2245,41 +2775,71 @@ describe('Repo model', () => {
           fork: false,
           url: 'https://api.github.com/repos/ski-ski/skiski-app',
           forks_url: 'https://api.github.com/repos/ski-ski/skiski-app/forks',
-          keys_url: 'https://api.github.com/repos/ski-ski/skiski-app/keys{/key_id}',
-          collaborators_url: 'https://api.github.com/repos/ski-ski/skiski-app/collaborators{/collaborator}',
+          keys_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/keys{/key_id}',
+          collaborators_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/collaborators{/collaborator}',
           teams_url: 'https://api.github.com/repos/ski-ski/skiski-app/teams',
           hooks_url: 'https://api.github.com/repos/ski-ski/skiski-app/hooks',
-          issue_events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/events{/number}',
+          issue_events_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/issues/events{/number}',
           events_url: 'https://api.github.com/repos/ski-ski/skiski-app/events',
-          assignees_url: 'https://api.github.com/repos/ski-ski/skiski-app/assignees{/user}',
-          branches_url: 'https://api.github.com/repos/ski-ski/skiski-app/branches{/branch}',
+          assignees_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/assignees{/user}',
+          branches_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/branches{/branch}',
           tags_url: 'https://api.github.com/repos/ski-ski/skiski-app/tags',
-          blobs_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/blobs{/sha}',
-          git_tags_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/tags{/sha}',
-          git_refs_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/refs{/sha}',
-          trees_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/trees{/sha}',
-          statuses_url: 'https://api.github.com/repos/ski-ski/skiski-app/statuses/{sha}',
-          languages_url: 'https://api.github.com/repos/ski-ski/skiski-app/languages',
-          stargazers_url: 'https://api.github.com/repos/ski-ski/skiski-app/stargazers',
-          contributors_url: 'https://api.github.com/repos/ski-ski/skiski-app/contributors',
-          subscribers_url: 'https://api.github.com/repos/ski-ski/skiski-app/subscribers',
-          subscription_url: 'https://api.github.com/repos/ski-ski/skiski-app/subscription',
-          commits_url: 'https://api.github.com/repos/ski-ski/skiski-app/commits{/sha}',
-          git_commits_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/commits{/sha}',
-          comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/comments{/number}',
-          issue_comment_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/comments{/number}',
-          contents_url: 'https://api.github.com/repos/ski-ski/skiski-app/contents/{+path}',
-          compare_url: 'https://api.github.com/repos/ski-ski/skiski-app/compare/{base}...{head}',
+          blobs_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/git/blobs{/sha}',
+          git_tags_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/git/tags{/sha}',
+          git_refs_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/git/refs{/sha}',
+          trees_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/git/trees{/sha}',
+          statuses_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/statuses/{sha}',
+          languages_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/languages',
+          stargazers_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/stargazers',
+          contributors_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/contributors',
+          subscribers_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/subscribers',
+          subscription_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/subscription',
+          commits_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/commits{/sha}',
+          git_commits_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/git/commits{/sha}',
+          comments_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/comments{/number}',
+          issue_comment_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/issues/comments{/number}',
+          contents_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/contents/{+path}',
+          compare_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/compare/{base}...{head}',
           merges_url: 'https://api.github.com/repos/ski-ski/skiski-app/merges',
-          archive_url: 'https://api.github.com/repos/ski-ski/skiski-app/{archive_format}{/ref}',
-          downloads_url: 'https://api.github.com/repos/ski-ski/skiski-app/downloads',
-          issues_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues{/number}',
-          pulls_url: 'https://api.github.com/repos/ski-ski/skiski-app/pulls{/number}',
-          milestones_url: 'https://api.github.com/repos/ski-ski/skiski-app/milestones{/number}',
-          notifications_url: 'https://api.github.com/repos/ski-ski/skiski-app/notifications{?since,all,participating}',
-          labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/labels{/name}',
-          releases_url: 'https://api.github.com/repos/ski-ski/skiski-app/releases{/id}',
-          deployments_url: 'https://api.github.com/repos/ski-ski/skiski-app/deployments',
+          archive_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/{archive_format}{/ref}',
+          downloads_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/downloads',
+          issues_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/issues{/number}',
+          pulls_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/pulls{/number}',
+          milestones_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/milestones{/number}',
+          notifications_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/notifications{?since,all,participating}',
+          labels_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/labels{/name}',
+          releases_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/releases{/id}',
+          deployments_url:
+      'https://api.github.com/repos/ski-ski/skiski-app/deployments',
           created_at: '2017-06-22T18:08:21Z',
           updated_at: '2017-06-23T22:48:38Z',
           pushed_at: '2017-08-03T02:23:38Z',
@@ -2317,19 +2877,24 @@ describe('Repo model', () => {
           href: 'https://api.github.com/repos/ski-ski/skiski-app/issues/68',
         },
         comments: {
-          href: 'https://api.github.com/repos/ski-ski/skiski-app/issues/68/comments',
+          href:
+      'https://api.github.com/repos/ski-ski/skiski-app/issues/68/comments',
         },
         review_comments: {
-          href: 'https://api.github.com/repos/ski-ski/skiski-app/pulls/68/comments',
+          href:
+      'https://api.github.com/repos/ski-ski/skiski-app/pulls/68/comments',
         },
         review_comment: {
-          href: 'https://api.github.com/repos/ski-ski/skiski-app/pulls/comments{/number}',
+          href:
+      'https://api.github.com/repos/ski-ski/skiski-app/pulls/comments{/number}',
         },
         commits: {
-          href: 'https://api.github.com/repos/ski-ski/skiski-app/pulls/68/commits',
+          href:
+      'https://api.github.com/repos/ski-ski/skiski-app/pulls/68/commits',
         },
         statuses: {
-          href: 'https://api.github.com/repos/ski-ski/skiski-app/statuses/324b698a9e7193a0abb42cf7d5d6d8a777b7bfbf',
+          href:
+      'https://api.github.com/repos/ski-ski/skiski-app/statuses/324b698a9e7193a0abb42cf7d5d6d8a777b7bfbf',
         },
       },
       merged: false,
@@ -2344,14 +2909,14 @@ describe('Repo model', () => {
       additions: 12,
       deletions: 2,
       changed_files: 6,
-    }];
+    };
     nock('https://api.github.com')
       .get(`/repos/ski-ski/skiski-app/pulls?access_token=${process.env.TKN}`)
       .reply(200, fetchPullsResponse);
     nock('https://api.github.com')
       .get(`/repos/ski-ski/skiski-app/pulls/68?access_token=${process.env.TKN}`)
       .reply(200, fetchPullRequestResponse);
-    const pr = await repo.fetchPullRequest();
-    expect(pr[0].pullRequest[0].id).to.equal(fetchPullRequestResponse[0].id);
+    const repoPR = await data.pullRequest;
+    expect(repoPR[0].pullRequest.id).to.equal(fetchPullRequestResponse.id);
   });
 });

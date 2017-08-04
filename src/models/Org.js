@@ -7,13 +7,16 @@ class Org {
     this.login = this.org.login;
     this.id = this.org.id;
     this.url = this.org.url;
-
-    this.fetchRepos = () => fetch(`${this.org.repos_url}?access_token=${process.env.TKN}`)
+  }
+  get orgRepos() {
+    return fetch(`${this.org.repos_url}?access_token=${process.env.TKN}`)
       .then(response => response.json())
-      .then(result => result.map((repo) => {
-        const orgRepo = new Repo(repo);
-        return orgRepo;
-      }));
+      .then(result =>
+        result.map((repo) => {
+          const orgRepo = new Repo(repo);
+          return orgRepo;
+        }),
+      );
   }
 }
 
