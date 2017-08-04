@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const graphqlHTTP = require('express-graphql');
-const root = require('./src/resolvers/GitDataResolver');
+const root = require('./src/resolvers/RootResolver');
 const schema = require('./src/schema/schema');
 
 
