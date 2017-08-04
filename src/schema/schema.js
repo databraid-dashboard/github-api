@@ -52,7 +52,7 @@ const schema = buildSchema(`
   }
 
   type Query {
-    getGitData(name: String!): User
+    gitData(name: String!): User
   }
 `);
 

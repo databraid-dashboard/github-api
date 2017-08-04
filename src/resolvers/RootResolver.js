@@ -1,7 +1,7 @@
 const User = require('../models/User');
 
 const root = {
-  getGitData(username) {
+  gitData(username) {
     return new User(username);
   },
 };

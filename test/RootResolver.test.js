@@ -7,7 +7,7 @@ const User = require('../src/models/User');
 
 describe('RootResolver model', () => {
   it('should be a function', () => {
-    expect(root.getGitData).to.be.a('function');
+    expect(root.gitData).to.be.a('function');
   });
 
   it('should return a new User model', () => {
