@@ -1,10 +1,9 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-undef */
 const { expect } = require('chai');
 const nock = require('nock');
 require('chai').use(require('sinon-chai'));
 const Repo = require('../src/models/Repo');
-
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-undef */
 
 describe('Repo model', () => {
   const data = new Repo({
@@ -2918,5 +2917,55 @@ describe('Repo model', () => {
       .reply(200, fetchPullRequestResponse);
     const repoPR = await data.pullRequest;
     expect(repoPR[0].pullRequest.id).to.equal(fetchPullRequestResponse.id);
+  });
+
+  after((done) => {
+    done();
+  });
+
+  it('milestone method should return repo milestones', async () => {
+    const fetchMilestoneResponse = [
+      {
+        url: 'https://api.github.com/repos/ski-ski/skiski-app/milestones/1',
+        html_url: 'https://github.com/ski-ski/skiski-app/milestone/1',
+        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/milestones/1/labels',
+        id: 2679653,
+        number: 1,
+        title: 'Test',
+        description: null,
+        creator: {
+          login: 'michaelmurray6298',
+          id: 24865792,
+          avatar_url: 'https://avatars1.githubusercontent.com/u/24865792?v=4',
+          gravatar_id: '',
+          url: 'https://api.github.com/users/michaelmurray6298',
+          html_url: 'https://github.com/michaelmurray6298',
+          followers_url: 'https://api.github.com/users/michaelmurray6298/followers',
+          following_url: 'https://api.github.com/users/michaelmurray6298/following{/other_user}',
+          gists_url: 'https://api.github.com/users/michaelmurray6298/gists{/gist_id}',
+          starred_url: 'https://api.github.com/users/michaelmurray6298/starred{/owner}{/repo}',
+          subscriptions_url: 'https://api.github.com/users/michaelmurray6298/subscriptions',
+          organizations_url: 'https://api.github.com/users/michaelmurray6298/orgs',
+          repos_url: 'https://api.github.com/users/michaelmurray6298/repos',
+          events_url: 'https://api.github.com/users/michaelmurray6298/events{/privacy}',
+          received_events_url: 'https://api.github.com/users/michaelmurray6298/received_events',
+          type: 'User',
+          site_admin: false,
+        },
+        open_issues: 1,
+        closed_issues: 0,
+        state: 'open',
+        created_at: '2017-08-03T19:50:57Z',
+        updated_at: '2017-08-03T19:50:57Z',
+        due_on: null,
+        closed_at: null,
+      },
+    ];
+
+    nock('https://api.github.com')
+      .get(`/repos/ski-ski/skiski-app/milestones?access_token=${process.env.TKN}`)
+      .reply(200, fetchMilestoneResponse);
+    const repoMilestone = await data.milestone;
+    expect(repoMilestone[0].milestone.id).to.equal(fetchMilestoneResponse[0].id);
   });
 });
