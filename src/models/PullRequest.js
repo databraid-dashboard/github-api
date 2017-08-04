@@ -1,31 +1,12 @@
 class PullRequest {
   constructor(pullRequest) {
     this.pullRequest = pullRequest;
-  }
-
-  id() {
-    return this.pullRequest.id;
-  }
-
-  number() {
-    return this.pullRequest.number;
-  }
-
-
-  title() {
-    return this.pullRequest.title;
-  }
-
-  submittedBy() {
-    return this.pullRequest.user.login;
-  }
-
-  createdAt() {
-    return this.pullRequest.created_at;
-  }
-
-  mergeability() {
-    return this.pullRequest.mergeable;
+    this.id = this.pullRequest.id;
+    this.number = this.pullRequest.number;
+    this.title = this.pullRequest.title;
+    this.submittedBy = this.pullRequest.user.login;
+    this.createdAt = this.pullRequest.created_at;
+    this.mergeable = this.pullRequest.mergeable;
   }
 }
 
