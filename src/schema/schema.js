@@ -4,24 +4,24 @@ const schema = buildSchema(`
   type User {
     id: ID!
     avatar_url: String!
-    orgs: [Org]
-    userRepos: [Repos]
+    fetchOrgs: [Org]
+    fetchUserRepo: [Repos]
   }
 
   type Org {
     id: ID!
     login: String!
     url: String!
-    orgRepos: [Repos]
+    fetchRepos: [Repos]
   }
 
   type Repos {
     id: ID!
     name: String!
+    fetchIssue: [Issue]
     openIssues: Int!
-    issue: [Issue]
-    pullRequest: [PullRequest]
-    milestone: [Milestone]
+    fetchPullRequest: [PullRequest]
+    fetchMilestone: [Milestone]
   }
 
   type PullRequest {
@@ -30,7 +30,7 @@ const schema = buildSchema(`
     submittedBy: String!
     createdAt: String!
     number: Int!
-    mergeable: Boolean!
+    mergeability: Boolean!
   }
 
   type Issue {
@@ -52,7 +52,7 @@ const schema = buildSchema(`
   }
 
   type Query {
-    getGitData(name: String!): User
+    getUser(name: String!): User
   }
 `);
 

@@ -7,11 +7,11 @@ class Issue {
     this.state = this.issue.state;
     this.number = this.issue.number;
   }
-  assigneeLogin() {
+  get assigneeLogin() {
     return this.issue.assignees.map(assignee => assignee.login);
   }
 
-  assigneeAvatar() {
+  get assigneeAvatar() {
     return this.issue.assignees.map(assignee => assignee.avatar_url);
   }
 }
