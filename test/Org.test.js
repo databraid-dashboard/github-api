@@ -17,7 +17,8 @@ describe('Org model', () => {
     hooks_url: 'https://api.github.com/orgs/ski-ski/hooks',
     issues_url: 'https://api.github.com/orgs/ski-ski/issues',
     members_url: 'https://api.github.com/orgs/ski-ski/members{/member}',
-    public_members_url: 'https://api.github.com/orgs/ski-ski/public_members{/member}',
+    public_members_url:
+   'https://api.github.com/orgs/ski-ski/public_members{/member}',
     avatar_url: 'https://avatars3.githubusercontent.com/u/29638033?v=4',
     description: null,
     has_organization_projects: true,
@@ -47,28 +48,25 @@ describe('Org model', () => {
     members_can_create_repositories: true,
   });
 
-  it('has login method ', () => {
-    expect(org.login).to.exist;
-  });
-
-  it('has id method ', () => {
-    expect(org.id).to.exist;
-  });
-
-  it('has url method ', () => {
-    expect(org.url).to.exist;
-  });
-
-  it('has fetchRepos method ', () => {
-    expect(org.fetchRepos).to.exist;
-  });
   it('accepts params', () => {
     expect(org.org.id).to.equal(29638033);
   });
-  after((done) => {
-    done();
+  it('has login property', () => {
+    expect(org.login).to.exist;
   });
-  it('fetchRepos method returns a repo', async () => {
+
+  it('has id property ', () => {
+    expect(org.id).to.exist;
+  });
+
+  it('has url property ', () => {
+    expect(org.url).to.exist;
+  });
+
+  it('has orgRepos method ', () => {
+    expect(org.orgRepos).to.exist;
+  });
+  it('orgRepos method returns a repo', async () => {
     const repoResponse = [
       {
         id: 95143360,
@@ -82,14 +80,18 @@ describe('Org model', () => {
           url: 'https://api.github.com/users/ski-ski',
           html_url: 'https://github.com/ski-ski',
           followers_url: 'https://api.github.com/users/ski-ski/followers',
-          following_url: 'https://api.github.com/users/ski-ski/following{/other_user}',
+          following_url:
+      'https://api.github.com/users/ski-ski/following{/other_user}',
           gists_url: 'https://api.github.com/users/ski-ski/gists{/gist_id}',
-          starred_url: 'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
-          subscriptions_url: 'https://api.github.com/users/ski-ski/subscriptions',
+          starred_url:
+      'https://api.github.com/users/ski-ski/starred{/owner}{/repo}',
+          subscriptions_url:
+      'https://api.github.com/users/ski-ski/subscriptions',
           organizations_url: 'https://api.github.com/users/ski-ski/orgs',
           repos_url: 'https://api.github.com/users/ski-ski/repos',
           events_url: 'https://api.github.com/users/ski-ski/events{/privacy}',
-          received_events_url: 'https://api.github.com/users/ski-ski/received_events',
+          received_events_url:
+      'https://api.github.com/users/ski-ski/received_events',
           type: 'Organization',
           site_admin: false,
         },
@@ -99,41 +101,71 @@ describe('Org model', () => {
         fork: false,
         url: 'https://api.github.com/repos/ski-ski/skiski-app',
         forks_url: 'https://api.github.com/repos/ski-ski/skiski-app/forks',
-        keys_url: 'https://api.github.com/repos/ski-ski/skiski-app/keys{/key_id}',
-        collaborators_url: 'https://api.github.com/repos/ski-ski/skiski-app/collaborators{/collaborator}',
+        keys_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/keys{/key_id}',
+        collaborators_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/collaborators{/collaborator}',
         teams_url: 'https://api.github.com/repos/ski-ski/skiski-app/teams',
         hooks_url: 'https://api.github.com/repos/ski-ski/skiski-app/hooks',
-        issue_events_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/events{/number}',
+        issue_events_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/events{/number}',
         events_url: 'https://api.github.com/repos/ski-ski/skiski-app/events',
-        assignees_url: 'https://api.github.com/repos/ski-ski/skiski-app/assignees{/user}',
-        branches_url: 'https://api.github.com/repos/ski-ski/skiski-app/branches{/branch}',
+        assignees_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/assignees{/user}',
+        branches_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/branches{/branch}',
         tags_url: 'https://api.github.com/repos/ski-ski/skiski-app/tags',
-        blobs_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/blobs{/sha}',
-        git_tags_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/tags{/sha}',
-        git_refs_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/refs{/sha}',
-        trees_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/trees{/sha}',
-        statuses_url: 'https://api.github.com/repos/ski-ski/skiski-app/statuses/{sha}',
-        languages_url: 'https://api.github.com/repos/ski-ski/skiski-app/languages',
-        stargazers_url: 'https://api.github.com/repos/ski-ski/skiski-app/stargazers',
-        contributors_url: 'https://api.github.com/repos/ski-ski/skiski-app/contributors',
-        subscribers_url: 'https://api.github.com/repos/ski-ski/skiski-app/subscribers',
-        subscription_url: 'https://api.github.com/repos/ski-ski/skiski-app/subscription',
-        commits_url: 'https://api.github.com/repos/ski-ski/skiski-app/commits{/sha}',
-        git_commits_url: 'https://api.github.com/repos/ski-ski/skiski-app/git/commits{/sha}',
-        comments_url: 'https://api.github.com/repos/ski-ski/skiski-app/comments{/number}',
-        issue_comment_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues/comments{/number}',
-        contents_url: 'https://api.github.com/repos/ski-ski/skiski-app/contents/{+path}',
-        compare_url: 'https://api.github.com/repos/ski-ski/skiski-app/compare/{base}...{head}',
+        blobs_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/git/blobs{/sha}',
+        git_tags_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/git/tags{/sha}',
+        git_refs_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/git/refs{/sha}',
+        trees_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/git/trees{/sha}',
+        statuses_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/statuses/{sha}',
+        languages_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/languages',
+        stargazers_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/stargazers',
+        contributors_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/contributors',
+        subscribers_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/subscribers',
+        subscription_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/subscription',
+        commits_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/commits{/sha}',
+        git_commits_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/git/commits{/sha}',
+        comments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/comments{/number}',
+        issue_comment_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues/comments{/number}',
+        contents_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/contents/{+path}',
+        compare_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/compare/{base}...{head}',
         merges_url: 'https://api.github.com/repos/ski-ski/skiski-app/merges',
-        archive_url: 'https://api.github.com/repos/ski-ski/skiski-app/{archive_format}{/ref}',
-        downloads_url: 'https://api.github.com/repos/ski-ski/skiski-app/downloads',
-        issues_url: 'https://api.github.com/repos/ski-ski/skiski-app/issues{/number}',
-        pulls_url: 'https://api.github.com/repos/ski-ski/skiski-app/pulls{/number}',
-        milestones_url: 'https://api.github.com/repos/ski-ski/skiski-app/milestones{/number}',
-        notifications_url: 'https://api.github.com/repos/ski-ski/skiski-app/notifications{?since,all,participating}',
-        labels_url: 'https://api.github.com/repos/ski-ski/skiski-app/labels{/name}',
-        releases_url: 'https://api.github.com/repos/ski-ski/skiski-app/releases{/id}',
-        deployments_url: 'https://api.github.com/repos/ski-ski/skiski-app/deployments',
+        archive_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/{archive_format}{/ref}',
+        downloads_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/downloads',
+        issues_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/issues{/number}',
+        pulls_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/pulls{/number}',
+        milestones_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/milestones{/number}',
+        notifications_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/notifications{?since,all,participating}',
+        labels_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/labels{/name}',
+        releases_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/releases{/id}',
+        deployments_url:
+     'https://api.github.com/repos/ski-ski/skiski-app/deployments',
         created_at: '2017-06-22T18:08:21Z',
         updated_at: '2017-06-23T22:48:38Z',
         pushed_at: '2017-08-02T21:01:03Z',
@@ -163,11 +195,15 @@ describe('Org model', () => {
           push: true,
           pull: true,
         },
-      }];
+      },
+    ];
     nock('https://api.github.com')
       .get(`/orgs/ski-ski/repos?access_token=${process.env.TKN}`)
       .reply(200, repoResponse);
-    const repos = await org.fetchRepos();
+    const repos = await org.orgRepos;
     expect(repos[0].repo.id).to.equal(repoResponse[0].id);
+  });
+  after((done) => {
+    done();
   });
 });

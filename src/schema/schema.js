@@ -4,24 +4,24 @@ const schema = buildSchema(`
   type User {
     id: ID!
     avatar_url: String!
-    fetchOrgs: [Org]
-    fetchUserRepo: [Repos]
+    orgs: [Org]
+    userRepos: [Repos]
   }
 
   type Org {
     id: ID!
     login: String!
     url: String!
-    fetchRepos: [Repos]
+    orgRepos: [Repos]
   }
 
   type Repos {
     id: ID!
     name: String!
-    fetchIssue: [Issue]
     openIssues: Int!
-    fetchPullRequest: [PullRequest]
-    fetchMilestone: [Milestone]
+    issue: [Issue]
+    pullRequest: [PullRequest]
+    milestone: [Milestone]
   }
 
   type PullRequest {
@@ -55,6 +55,5 @@ const schema = buildSchema(`
     getGitData(name: String!): User
   }
 `);
-
 
 module.exports = schema;
