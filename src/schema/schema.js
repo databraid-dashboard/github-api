@@ -2,8 +2,7 @@ const { buildSchema } = require('graphql');
 
 const schema = buildSchema(`
   type User {
-    userOrgs: [Orgs]
-    userRepos: [Repos]
+    userAvatar: String!
   }
 
   type Orgs {
@@ -15,7 +14,6 @@ const schema = buildSchema(`
     login: String!
     url: String!
     avatarUrl: String!
-    orgRepos: [Repos]
   }
 
   type Repos {
@@ -25,7 +23,7 @@ const schema = buildSchema(`
   type Repo {
     id: ID!
     name: String!
-    openIssues: Int!
+    openIssues: Int
     issues: [Issue]
     pullRequests: [PullRequest]
     milestones: [Milestone]
@@ -33,8 +31,8 @@ const schema = buildSchema(`
 
   type PullRequest {
     id: ID!
-    title: String!
-    submittedBy: String!
+    title: String
+    submittedBy: String
     createdAt: String!
     number: Int!
     mergeable: Boolean!
@@ -42,20 +40,20 @@ const schema = buildSchema(`
 
   type Issue {
     id: ID!
-    title: String!
-    number: Int!
-    state: String!
-    assigneeAvatar: String!
-    assigneeLogin: String!
+    title: String
+    number: Int
+    state: String
+    assignee: String
+    assigneeAvatar: String
     labels: [String]
   }
 
   type Milestone {
-    id: ID!
-    title: String!
-    openIssues: Int!
-    closedIssues: Int!
-    dueOn: String!
+    id: ID
+    title: String
+    openIssues: Int
+    closedIssues: Int
+    dueOn: String
   }
 
   type Query {
