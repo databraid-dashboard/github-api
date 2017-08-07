@@ -11,8 +11,8 @@ const root = {
     return new Orgs(userName, orgName);
   },
 
-  repos({ userName, orgName, repoName }) {
-    return new Repos(userName, orgName, repoName);
+  repos({ userName, repoName, orgName }) {
+    return new Repos(userName, repoName, orgName);
   },
 };
 
