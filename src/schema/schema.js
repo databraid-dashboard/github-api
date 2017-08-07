@@ -2,26 +2,33 @@ const { buildSchema } = require('graphql');
 
 const schema = buildSchema(`
   type User {
-    id: ID!
-    avatar_url: String!
-    orgs: [Org]
+    userOrgs: [Orgs]
     userRepos: [Repos]
+  }
+
+  type Orgs {
+    orgs: [Org]
   }
 
   type Org {
     id: ID!
     login: String!
     url: String!
+    avatarUrl: String!
     orgRepos: [Repos]
   }
 
   type Repos {
+    repo: [Repo]
+  }
+
+  type Repo {
     id: ID!
     name: String!
     openIssues: Int!
-    issue: [Issue]
-    pullRequest: [PullRequest]
-    milestone: [Milestone]
+    issues: [Issue]
+    pullRequests: [PullRequest]
+    milestones: [Milestone]
   }
 
   type PullRequest {
@@ -52,7 +59,9 @@ const schema = buildSchema(`
   }
 
   type Query {
-    getGitData(name: String!): User
+    user(userName: String!): User
+    orgs(userName: String!, orgName: String): Orgs
+    repos(userName: String, orgName: String, repoName: String): Repos
   }
 `);
 
