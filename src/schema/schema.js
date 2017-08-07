@@ -19,7 +19,7 @@ const schema = buildSchema(`
   }
 
   type Repos {
-    repo: [Repo]
+    repos: [Repo]
   }
 
   type Repo {
@@ -61,7 +61,7 @@ const schema = buildSchema(`
   type Query {
     user(userName: String!): User
     orgs(userName: String!, orgName: String): Orgs
-    repos(userName: String, orgName: String, repoName: String): Repos
+    repos(userName: String, repoName: String, orgName: String): Repos
   }
 `);
 
