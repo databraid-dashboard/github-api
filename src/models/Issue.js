@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Refactor User and Issue model to match new schema layout
 /* eslint-disable no-param-reassign */
 function getAssignee(assignee) {
   if (assignee === null) {
@@ -16,6 +19,7 @@ function getAssigneeAvatar(assignee) {
   return assignee.avatar_url;
 }
 
+<<<<<<< HEAD
 class Issue {
   constructor(issue) {
     this.issue = issue;
@@ -27,6 +31,8 @@ class Issue {
     this.assignee = getAssignee(this.issue.assignee);
     this.assigneeAvatar = getAssigneeAvatar(this.issue.assignee);
 =======
+=======
+>>>>>>> Refactor User and Issue model to match new schema layout
 class Issue {
   constructor(issue) {
     this.issue = issue;
@@ -35,13 +41,8 @@ class Issue {
     this.labels = this.issue.labels;
     this.state = this.issue.state;
     this.number = this.issue.number;
-  }
-  assigneeLogin() {
-    return this.issue.assignees.map(assignee => assignee.login);
-  }
-
-  assigneeAvatar() {
-    return this.issue.assignees.map(assignee => assignee.avatar_url);
+    this.assignee = getAssignee(this.issue.assignee);
+    this.assigneeAvatar = getAssigneeAvatar(this.issue.assignee);
   }
 <<<<<<< HEAD
 
