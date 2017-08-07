@@ -1,43 +1,20 @@
 require('dotenv').config();
 const fetch = require('isomorphic-fetch');
-const Org = require('./Org');
-const Repo = require('./Repo');
+
+function getJson(response) {
+  return response.json();
+}
 
 class User {
-  constructor(username) {
+  constructor(userName) {
     this.base = 'https://api.github.com/users/';
-    this.username = username;
-  }
-  get orgs() {
-    return fetch(
-      `${this.base}${this.username.name}?access_token=${process.env.TKN}`,
-    )
-      .then(response => response.json())
-      .then(result => result.organizations_url)
-      .then(orgsUrl => fetch(`${orgsUrl}?access_token=${process.env.TKN}`))
-      .then(response => response.json())
-      .then(result =>
-        result.map((org) => {
-          const userOrg = new Org(org);
-          return userOrg;
-        }),
-      );
+    this.userName = userName.userName;
   }
 
-  get userRepos() {
-    return fetch(
-      `${this.base}${this.username.name}?access_token=${process.env.TKN}`,
-    )
-      .then(response => response.json())
-      .then(user => user.repos_url)
-      .then(repoUrl => fetch(`${repoUrl}?access_token=${process.env.TKN}`))
-      .then(response => response.json())
-      .then(result =>
-        result.map((repo) => {
-          const userRepo = new Repo(repo);
-          return userRepo;
-        }),
-      );
+  get userAvatar() {
+    return fetch(`${this.base}${this.userName}?access_token=${process.env.TKN}`)
+      .then(getJson)
+      .then(result => result.avatar_url);
   }
 }
 
