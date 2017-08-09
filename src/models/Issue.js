@@ -3,6 +3,8 @@
 =======
 >>>>>>> Refactor User and Issue model to match new schema layout
 /* eslint-disable no-param-reassign */
+const Label = require('./Label');
+
 function getAssignee(assignee) {
   if (assignee === null) {
     assignee = 'Not assigned';
@@ -58,8 +60,15 @@ class Issue {
     return this.issue.number;
 >>>>>>> Initial issues model
   }
+<<<<<<< HEAD
 =======
 >>>>>>> Refactor model format
+=======
+
+  get label() {
+    return this.labels.map(label => new Label(label));
+  }
+>>>>>>> Add Label model
 }
 
 module.exports = Issue;
