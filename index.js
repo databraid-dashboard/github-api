@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 8000;
 const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
 const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
 
-const allowCrossDomain = function (req, res, next) {
+const allowCrossDomain = (req, res, next) => {
   res.header('Access-Control-Allow-Credentials', true);
   res.header('Access-Control-Allow-Origin', req.headers.origin);
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
@@ -44,42 +44,14 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-// passport.use(new GitHubStrategy({
-//     clientID: GITHUB_CLIENT_ID,
-//     clientSecret: GITHUB_CLIENT_SECRET,
-//     callbackURL: "http://localhost:8000/auth/github/callback"
-//   },
-//   (accessToken, refreshToken, profile, done) => {
-//     console.log('here in strategy');
-//     // asynchronous verification, for effect...
-//
-//       // To keep the example simple, the user's GitHub profile is returned to
-//       // represent the logged-in user.  In a typical application, you would want
-//       // to associate the GitHub account with a user record in your database,
-//       // and return that user instead.
-//       done(null, profile);
-//   }));
-
-
 passport.use(new GitHubStrategy({
   clientID: GITHUB_CLIENT_ID,
   clientSecret: GITHUB_CLIENT_SECRET,
   callbackURL: 'http://localhost:8000/auth/github/callback',
 },
   ((accessToken, refreshToken, profile, done) => {
-  // asynchronous verification, for effect...
-  console.log(process.env.TKN);
-  console.log(accessToken, 'accessToken');
-  console.log(refreshToken, 'refreshToken');
-  process.env.TKN = accessToken;
-  console.log(process.env.TKN);
+    process.env.TKN = accessToken;
     process.nextTick(() =>
-
-      // To keep the example simple, the user's GitHub profile is returned to
-      // represent the logged-in user.  In a typical application, you would want
-      // to associate the GitHub account with a user record in your database,
-      // and return that user instead.
       done(null, profile),
     );
   }),
@@ -95,42 +67,21 @@ passport.deserializeUser((obj, done) => {
 
 app.use((req, res, next) => {
   res.locals.user = req.user;
-  // console.log(res.locals.users, 'res.locals.user');
-  // console.log(req.user, 'req.user');
-  // console.log(res.session);
   next();
 });
-
-
-// NOTE prev code /\
-
-// NOTES WITH daniel  -- need session keys generated
-// CORS headers ALLOWCross Domain
-//
-// app.set('views', __dirname + '/views');
-// app.set('view engine', 'html');
-//
-
-
-// Initialize Passport!  Also use passport.session() middleware, to support
-// persistent login sessions (recommended).
-//
-// passport.authenticate('github', { scope: [ 'user:email', 'read:org', 'notifications' ] }),
 
 app.get('/auth/github',
   passport.authenticate('github', { scope: ['user:email', 'read:org', 'notifications', 'repo'] }));
 
 app.get('/auth/github/callback',
   passport.authenticate('github'),
-  (req, res) => {
-    return res.json(req.session.passport);
-  });
+  (req, res) => res.json(req.session.passport));
 
-  app.use('/graphql', graphqlHTTP({
-    schema,
-    rootValue: root,
-    graphiql: true,
-  }));
+app.use('/graphql', graphqlHTTP({
+  schema,
+  rootValue: root,
+  graphiql: true,
+}));
 
 // NOTE logout triggers end of session pass new session info to DB
 app.get('/logout', (req, res) => {
@@ -150,8 +101,4 @@ if (!module.parent) {
     /* eslint-disable no-console */
     console.log(`Express server listening on port ${PORT}`);
   });
-}
-function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) { return next(); }
-  res.redirect('/login');
 }
