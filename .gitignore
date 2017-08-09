@@ -1,1 +1,6 @@
 node_modules
+.env
+Oauth.js
+responseworksheet.js
+resWpartialsAndOverrideworksheet.js
+resppartialsNoNextTick.js
