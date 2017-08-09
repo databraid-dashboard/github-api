@@ -11,6 +11,8 @@ const session = require('express-session');
 const methodOverride = require('method-override');
 
 const app = express();
+app.use(partials());
+app.use(methodOverride());
 
 const PORT = process.env.PORT || 8000;
 const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
@@ -43,21 +45,40 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-passport.use(new GitHubStrategy({
-    clientID: GITHUB_CLIENT_ID,
-    clientSecret: GITHUB_CLIENT_SECRET,
-    callbackURL: "http://localhost:8000/auth/github/callback"
-  },
-  (accessToken, refreshToken, profile, done) => {
-    console.log('here in strategy');
-    // asynchronous verification, for effect...
+// passport.use(new GitHubStrategy({
+//     clientID: GITHUB_CLIENT_ID,
+//     clientSecret: GITHUB_CLIENT_SECRET,
+//     callbackURL: "http://localhost:8000/auth/github/callback"
+//   },
+//   (accessToken, refreshToken, profile, done) => {
+//     console.log('here in strategy');
+//     // asynchronous verification, for effect...
+//
+//       // To keep the example simple, the user's GitHub profile is returned to
+//       // represent the logged-in user.  In a typical application, you would want
+//       // to associate the GitHub account with a user record in your database,
+//       // and return that user instead.
+//       done(null, profile);
+//   }));
 
-      // To keep the example simple, the user's GitHub profile is returned to
-      // represent the logged-in user.  In a typical application, you would want
-      // to associate the GitHub account with a user record in your database,
-      // and return that user instead.
-      done(null, profile);
-  }));
+
+  passport.use(new GitHubStrategy({
+      clientID: GITHUB_CLIENT_ID,
+      clientSecret: GITHUB_CLIENT_SECRET,
+      callbackURL: "http://localhost:8000/auth/github/callback"
+    },
+    function(accessToken, refreshToken, profile, done) {
+      // asynchronous verification, for effect...
+      process.nextTick(function () {
+
+        // To keep the example simple, the user's GitHub profile is returned to
+        // represent the logged-in user.  In a typical application, you would want
+        // to associate the GitHub account with a user record in your database,
+        // and return that user instead.
+        return done(null, profile);
+      });
+    }
+  ));
 passport.serializeUser((user, done) => {
   done(null, user);
 });
@@ -71,14 +92,15 @@ app.use((req, res, next) => {
   res.locals.user = req.user
   console.log(res.locals.users, 'res.locals.user');
   console.log(req.user, 'req.user');
+  console.log(res.session);
   next()
 })
 
-// app.use('/graphql', graphqlHTTP({
-//   schema,
-//   rootValue: root,
-//   graphiql: true,
-// }));
+app.use('/graphql', graphqlHTTP({
+  schema,
+  rootValue: root,
+  graphiql: true,
+}));
 
 //NOTE prev code /\
 
@@ -88,8 +110,7 @@ app.use((req, res, next) => {
 // app.set('views', __dirname + '/views');
 // app.set('view engine', 'html');
 //
-// app.use(partials());
-// app.use(methodOverride());
+
 
 // Initialize Passport!  Also use passport.session() middleware, to support
 // persistent login sessions (recommended).
@@ -102,13 +123,14 @@ app.get('/auth/github',
 app.get('/auth/github/callback',
   passport.authenticate('github'),
   (req, res) => {
-    console.log('passport.authenticate', req);
+    console.log('passport.authenticate', req.session.passport);
+    return res.json(req.session.passport)
   });
 
 // NOTE logout triggers end of session pass new session info to DB
 app.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/');
+  res.status(200).json(JSON.stringify('logout'))
 });
 
 
