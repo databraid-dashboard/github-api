@@ -1,4 +1,6 @@
 /* eslint-disable no-param-reassign */
+const Label = require('./Label');
+
 function getAssignee(assignee) {
   if (assignee === null) {
     assignee = 'Not assigned';
@@ -25,6 +27,10 @@ class Issue {
     this.number = this.issue.number;
     this.assignee = getAssignee(this.issue.assignee);
     this.assigneeAvatar = getAssigneeAvatar(this.issue.assignee);
+  }
+
+  get label() {
+    return this.labels.map(label => new Label(label));
   }
 }
 
