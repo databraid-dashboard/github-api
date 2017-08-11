@@ -93,7 +93,7 @@ app.get('/auth/github/callback',
   res.cookie('userName', req.session.passport.user._json.login, {
     httpOnly: false
   })
-  res.cookie('userOrgsURL', req.session.passport.user._json.organizations_url,  {
+  res.cookie('isAuth', 'true',  {
     httpOnly: false
   })
 
@@ -101,15 +101,15 @@ app.get('/auth/github/callback',
   }
 );
 
-app.get('/isAuthenticated', (req, res, next) => {
-  console.log(req.isAuthenticated(), 'is authenticated??');
-
-  if (req.isAuthenticated()) {
-    res.status(201).send({isAuth: 'true'})
-  } else {
-    res.status(408).send({isAuth: 'false'})
-  };
-})
+// app.get('/isAuthenticated', (req, res, next) => {
+//   console.log(req.isAuthenticated(), 'is authenticated??');
+//
+//   if (req.isAuthenticated()) {
+//     res.status(201).send({isAuth: 'true'})
+//   } else {
+//     res.status(408).send({isAuth: 'false'})
+//   };
+// })
 
 //NOTE new route for req.session.passport.user._json.login
 
