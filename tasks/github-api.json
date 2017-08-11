@@ -1,0 +1,20 @@
+{
+	"containerDefinitions": [
+		{
+			"memory": 512,
+			"portMappings": [
+				{
+					"hostPort": 0,
+					"containerPort": 8000,
+					"protocol": "tcp"
+				}
+			],
+			"essential": true,
+			"name": "github-api",
+			"image": "databraiddb/github-api:latest",
+			"cpu": 10,
+			"command": ["npm", "start"]
+		}
+	],
+	"family": "github-api"
+}
