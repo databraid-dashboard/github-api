@@ -4,10 +4,12 @@ const graphqlHTTP = require('express-graphql');
 const root = require('./src/resolvers/RootResolver');
 const schema = require('./src/schema/schema');
 
+
 const app = express();
 const PORT = process.env.PORT || 8000;
 
 app.use(bodyParser.json());
+
 
 app.use(
   '/graphql',
