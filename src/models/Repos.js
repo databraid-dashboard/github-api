@@ -10,6 +10,7 @@ function addToArray(value) {
 }
 
 function filterRelevantFields(repos) {
+  console.log(repos);
   return repos.filter(({ id, name, open_issues, issues_url, pulls_url, milestones_url }) => ({
     id,
     name,
