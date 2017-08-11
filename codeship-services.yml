@@ -4,6 +4,6 @@ awsdeployment:
   volumes:
     - ./:/deploy
 
-transit-api:
+github-api:
   build:
     dockerfile: Dockerfile
