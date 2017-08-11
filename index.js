@@ -10,16 +10,19 @@ const PORT = process.env.PORT || 8000;
 
 app.use(bodyParser.json());
 
-app.use('/graphql', graphqlHTTP({
-  schema,
-  rootValue: root,
-  graphiql: true,
-}));
+
+app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema,
+    rootValue: root,
+    graphiql: true,
+  }),
+);
 
 app.use((req, res) => {
   res.sendStatus(404);
 });
-
 
 if (!module.parent) {
   app.listen(PORT, () => {
