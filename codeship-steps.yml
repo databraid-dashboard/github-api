@@ -1,0 +1,12 @@
+- service: github-api
+  command: npm run production-lint
+- service: github-api
+  command: npm run production-test
+- service: github-api
+  type: push
+  image_name: databraiddb/github-api
+  encrypted_dockercfg_path: dockercfg.encrypted
+- service: awsdeployment
+  command: aws ecs register-task-definition --cli-input-json file:///deploy/tasks/github-api.json
+- service: awsdeployment
+  command: aws ecs update-service --cluster databraid-cluster --service github-api-service --task-definition github-api
