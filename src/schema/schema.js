@@ -45,7 +45,16 @@ const schema = buildSchema(`
     state: String
     assignee: String
     assigneeAvatar: String
+<<<<<<< HEAD
     labels: [String]
+=======
+    labels: [Label]
+  }
+
+  type Label {
+    name: String
+    color: String
+>>>>>>> 3131f36dc5b50f786f6549f3fc7c6fb19951fc95
   }
 
   type Milestone {
