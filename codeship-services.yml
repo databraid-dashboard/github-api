@@ -6,4 +6,5 @@ awsdeployment:
 
 github-api:
   build:
+    image: databraiddb/github-api
     dockerfile: Dockerfile
