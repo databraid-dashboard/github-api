@@ -69,19 +69,15 @@ passport.use(new GitHubStrategy({
 ));
 
 app.use((req, res, next) => {
+  console.log('header', req.headers)
+  next()
+})
+
+app.use((req, res, next) => {
   res.locals.user = req.user;
   next();
 });
-app.get('/isAuthenticated', (req, res, next) => {
-  console.log(req.isAuthenticated(), 'is authenticated??');
 
-  if (req.isAuthenticated()) {
-    res.status(201).send({isAuth: 'true'})
-  } else {
-    res.status(404).send({isAuth: 'false'})
-  };
-
-})
 app.get('/auth/github',
   passport.authenticate('github', { scope: ['user:email', 'read:org', 'notifications', 'repo'] })
 );
@@ -105,7 +101,15 @@ app.get('/auth/github/callback',
   }
 );
 
+app.get('/isAuthenticated', (req, res, next) => {
+  console.log(req.isAuthenticated(), 'is authenticated??');
 
+  if (req.isAuthenticated()) {
+    res.status(201).send({isAuth: 'true'})
+  } else {
+    res.status(408).send({isAuth: 'false'})
+  };
+})
 
 //NOTE new route for req.session.passport.user._json.login
 
