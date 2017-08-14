@@ -12,7 +12,6 @@ const methodOverride = require('method-override');
 
 const app = express();
 app.use(partials());
-// app.use(methodOverride());
 
 const PORT = process.env.PORT || 8000;
 const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
@@ -86,10 +85,6 @@ app.get('/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/ghj' }),
 
   (req, res) => {
-    // console.log('here!', req.session.passport.user._json.organizations_url);
-  // res.cookie({userName : req.session.passport.user._json.login, userOrgs: req.session.passport.user._json.organizations_url, httpOnly: false})
-  // res.cookie({userName: req.session.passport.user._json.login})
-  // console.log(`The userName is: ${req.session.passport.user._json.login} and the userOrgs URL is: ${req.session.passport.user._json.organizations_url}, httpOnly:${}`);
   res.cookie('userName', req.session.passport.user._json.login, {
     httpOnly: false
   })
@@ -101,38 +96,20 @@ app.get('/auth/github/callback',
   }
 );
 
-// app.get('/isAuthenticated', (req, res, next) => {
-//   console.log(req.isAuthenticated(), 'is authenticated??');
-//
-//   if (req.isAuthenticated()) {
-//     res.status(201).send({isAuth: 'true'})
-//   } else {
-//     res.status(408).send({isAuth: 'false'})
-//   };
-// })
-
-//NOTE new route for req.session.passport.user._json.login
+app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema,
+    rootValue: root,
+    graphiql: true,
+  }),
+);
 
 
-app.use('/graphql', graphqlHTTP({
-  schema,
-  rootValue: root,
-  graphiql: true,
-}));
 
-// NOTE logout triggers end of session pass new session info to DB
-app.get('/logout', (req, res) => {
-  req.logout();
-  res.status(200).json(JSON.stringify('logout'));
-});
-
-
-// NOTE previous code
 app.use((req, res) => {
   res.sendStatus(404);
 });
-
-
 
 if (!module.parent) {
   app.listen(PORT, () => {
