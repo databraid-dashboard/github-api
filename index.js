@@ -31,34 +31,8 @@ app.use(session({
 
 
 
-app.use(passport.initialize());
-app.use(passport.session());
-passport.serializeUser((user, done) => {
-  done(null, user);
-});
-
-passport.deserializeUser((obj, done) => {
-  done(null, obj);
-});
-
-passport.use(new GitHubStrategy({
-  clientID: GITHUB_CLIENT_ID,
-  clientSecret: GITHUB_CLIENT_SECRET,
-  callbackURL: env = 'development'? CALLBACK_URL : 'https:deployed_site.com',
-},
-  ((accessToken, refreshToken, profile, done) => {
-    process.env.TKN = accessToken;
-    process.nextTick(() =>
-      done(null, profile),
-    );
-  }),
-));
-
-//TODO investigate this code as it is not setting any values
-app.use((req, res, next) => {
-  // console.log('res.locals.user', res.locals.user, 'req.body', req.body);
-  res.locals.user = req.user;
-  next();
+app.use('/', (req, res) => {
+  res.sendStatus(200);
 });
 
 app.use(
