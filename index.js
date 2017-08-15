@@ -10,6 +10,9 @@ const PORT = process.env.PORT || 8000;
 
 app.use(bodyParser.json());
 
+app.use('/', (req, res) => {
+  res.sendStatus(200);
+});
 
 app.use(
   '/graphql',
