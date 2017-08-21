@@ -1,3 +1,6 @@
 node_modules
 .env
-codeship.aes
+Oauth.js
+responseworksheet.js
+resWpartialsAndOverrideworksheet.js
+resppartialsNoNextTick.js
