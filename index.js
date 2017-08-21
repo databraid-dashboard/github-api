@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const graphqlHTTP = require('express-graphql');
+const cors = require('cors');
 const root = require('./src/resolvers/RootResolver');
 const schema = require('./src/schema/schema');
 const GitHubStrategy = require('passport-github2').Strategy;
@@ -35,9 +36,7 @@ app.use(session({
 
 
 
-app.use('/', (req, res) => {
-  res.sendStatus(200);
-});
+
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -92,7 +91,9 @@ passport.authenticate('github', { failureRedirect: '/' }),
   res.redirect(urlPath())
 }
 );
-
+app.use('/', (req, res) => {
+  res.sendStatus(200);
+});
 app.use((req, res) => {
   res.sendStatus(404);
 });
