@@ -96,6 +96,7 @@ app.get('/auth/github/callback',
   }
 );
 
+
 app.use(
   '/graphql',
   graphqlHTTP({
