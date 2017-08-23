@@ -53,12 +53,6 @@ passport.use(new GitHubStrategy({
   }),
 ));
 
-//TODO investigate this code as it is not setting any values
-app.use((req, res, next) => {
-  // console.log('res.locals.user', res.locals.user, 'req.body', req.body);
-  res.locals.user = req.user;
-  next();
-});
 
 app.use(
   '/graphql',
