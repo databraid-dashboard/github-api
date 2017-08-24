@@ -8,15 +8,18 @@ const passport = require('passport');
 const partials = require('express-partials');
 const session = require('express-session');
 const cors = require('cors');
-
 const app = express();
+
 app.use(partials());
 
 const PORT = process.env.PORT || 8000;
 const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
 const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
 const SECRET = process.env.SECRET
-const CALLBACK_URL = process.env.CALLBACK_URL
+
+const LOCAL_CALLBACK_URL = process.env.LOCAL_CALLBACK_URL
+const NODE_ENV = process.env.NODE_ENV
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -43,7 +46,7 @@ passport.deserializeUser((obj, done) => {
 passport.use(new GitHubStrategy({
   clientID: GITHUB_CLIENT_ID,
   clientSecret: GITHUB_CLIENT_SECRET,
-  callbackURL: env = 'development'? CALLBACK_URL : 'https:deployed_site.com',
+  callbackURL: NODE_ENV === 'development'? LOCAL_CALLBACK_URL : 'https:deployed_site.com',
 },
   ((accessToken, refreshToken, profile, done) => {
     process.env.TKN = accessToken;
@@ -69,7 +72,7 @@ passport.authenticate('github', { scope: ['user:email', 'read:org', 'notificatio
 );
 
 app.get('/auth/github/callback',
-passport.authenticate('github', { failureRedirect: '/ghj' }),
+passport.authenticate('github', { failureRedirect: '/' }),
 
 (req, res) => {
   res.cookie('userName', req.session.passport.user._json.login, {
@@ -79,7 +82,7 @@ passport.authenticate('github', { failureRedirect: '/ghj' }),
     httpOnly: false
   })
 
-  res.redirect('http://localhost:3000/')
+  res.redirect(urlPath)
 }
 );
 
@@ -92,4 +95,11 @@ if (!module.parent) {
     /* eslint-disable no-console */
     console.log(`Express server listening on port ${PORT}`);
   });
+}
+function urlPath() {
+  if (NODE_ENV === 'development') {
+    return 'http://localhost:3000/'
+  } else {
+    return 'http://someLiveURL.com/'
+  }
 }
