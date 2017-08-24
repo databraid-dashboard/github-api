@@ -52,7 +52,7 @@ passport.deserializeUser((obj, done) => {
 passport.use(new GitHubStrategy({
   clientID: GITHUB_CLIENT_ID,
   clientSecret: GITHUB_CLIENT_SECRET,
-  callbackURL: NODE_ENV === 'development'? LOCAL_CALLBACK_URL : 'https:deployed_site.com',
+  callbackURL: NODE_ENV === 'development' ? LOCAL_CALLBACK_URL : 'https:deployed_site.com',
 },
   ((accessToken, refreshToken, profile, done) => {
     process.env.TKN = accessToken;
@@ -89,7 +89,7 @@ passport.authenticate('github', { failureRedirect: '/' }),
     httpOnly: false
   })
 
-  res.redirect(urlPath)
+  res.redirect(urlPath())
 }
 );
 
