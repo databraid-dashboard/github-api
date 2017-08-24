@@ -15,12 +15,7 @@ app.use(partials());
 // app.use(methodOverride());
 
 const PORT = process.env.PORT || 8000;
-const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
-const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
-const SECRET = process.env.SECRET
 
-const LOCAL_CALLBACK_URL = process.env.LOCAL_CALLBACK_URL
-const NODE_ENV = process.env.NODE_ENV
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -49,9 +44,9 @@ passport.deserializeUser((obj, done) => {
 });
 
 passport.use(new GitHubStrategy({
-  clientID: GITHUB_CLIENT_ID,
-  clientSecret: GITHUB_CLIENT_SECRET,
-  callbackURL: NODE_ENV === 'development' ? LOCAL_CALLBACK_URL : 'https:deployed_site.com',
+  clientID: process.env.GITHUB_CLIENT_ID,
+  clientSecret: process.env.GITHUB_CLIENT_SECRET,
+  callbackURL: process.env.NODE_ENV === 'development' ? process.env.LOCAL_CALLBACK_URL : 'https:deployed_site.com',
 },
   ((accessToken, refreshToken, profile, done) => {
     process.env.TKN = accessToken;
@@ -107,7 +102,7 @@ if (!module.parent) {
   });
 }
 function urlPath() {
-  if (NODE_ENV === 'development') {
+  if (process.env.NODE_ENV === 'development') {
     return 'http://localhost:3000/'
   } else {
     return 'http://someLiveURL.com/'
