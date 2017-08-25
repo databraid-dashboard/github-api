@@ -1,8 +1,8 @@
 {
-	"name": "",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
+  "name": "",
+  "version": "1.0.2",
+  "description": "",
+  "main": "index.js",
 	"scripts": {
 		"test": "scripts/test",
 		"production-test": "scripts/production-test",
@@ -13,32 +13,38 @@
 		"production-lint": "scripts/production-lint",
 		"start": "node index.js"
 	},
-	"author": "",
-	"license": "MIT",
-	"dependencies": {
-		"body-parser": "1.17.2",
-		"cors": "2.8.4",
-		"dotenv": "4.0.0",
-		"es6-promise": "4.1.1",
-		"eslint": "4.3.0",
-		"eslint-config-airbnb-base": "11.3.1",
-		"eslint-plugin-import": "2.7.0",
-		"express": "4.15.3",
-		"express-graphql": "0.6.7",
-		"graphql": "0.10.5",
-		"graphql-tools": "1.1.0",
-		"isomorphic-fetch": "2.2.1",
-		"nock": "9.0.14",
-		"node-fetch": "1.7.1",
-		"nodemon": "1.11.0",
-		"whatwg-fetch": "2.0.3"
-	},
-	"devDependencies": {
-		"babel-register": "6.24.1",
-		"chai": "4.1.0",
-		"mocha": "3.4.2",
-		"nock": "9.0.14",
-		"sinon": "2.4.1",
-		"sinon-chai": "2.12.0"
-	}
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "1.17.2",
+    "cors": "2.8.4",
+    "dotenv": "4.0.0",
+    "ejs": "2.5.7",
+    "es6-promise": "4.1.1",
+    "eslint": "4.3.0",
+    "eslint-config-airbnb-base": "11.3.1",
+    "eslint-plugin-import": "2.7.0",
+    "express": "4.15.3",
+    "express-graphql": "0.6.7",
+    "express-partials": "0.3.0",
+    "express-session": "1.15.2",
+    "graphql": "0.10.5",
+    "graphql-tools": "1.1.0",
+    "isomorphic-fetch": "2.2.1",
+    "method-override": "2.3.5",
+    "nock": "9.0.14",
+    "node-fetch": "1.7.1",
+    "nodemon": "1.11.0",
+    "passport": "0.3.2",
+    "passport-github2": "0.1.10",
+    "whatwg-fetch": "2.0.3"
+  },
+  "devDependencies": {
+    "babel-register": "6.24.1",
+    "chai": "4.1.0",
+    "mocha": "3.4.2",
+    "nock": "9.0.14",
+    "sinon": "2.4.1",
+    "sinon-chai": "2.12.0"
+  }
 }
