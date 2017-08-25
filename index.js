@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const graphqlHTTP = require('express-graphql');
-const cors = require('cors');
 const root = require('./src/resolvers/RootResolver');
 const schema = require('./src/schema/schema');
 const GitHubStrategy = require('passport-github2').Strategy;
@@ -9,12 +8,19 @@ const passport = require('passport');
 const partials = require('express-partials');
 const session = require('express-session');
 const cors = require('cors');
+
 const app = express();
 
-app.use(partials());
 const PORT = process.env.PORT || 8000;
 
+function urlPath() {
+  if (process.env.NODE_ENV === 'development') {
+    return 'http://localhost:3000/';
+  }
+  return 'http://someLiveURL.com/';
+}
 
+app.use(partials());
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -58,7 +64,6 @@ passport.use(new GitHubStrategy({
 ));
 
 
-
 app.use(
   '/graphql',
   graphqlHTTP({
@@ -70,22 +75,22 @@ app.use(
 
 
 app.get('/auth/github',
-passport.authenticate('github', { scope: ['user:email', 'read:org', 'notifications', 'repo'] })
+  passport.authenticate('github', { scope: ['user:email', 'read:org', 'notifications', 'repo'] }),
 );
 
 app.get('/auth/github/callback',
-passport.authenticate('github', { failureRedirect: '/' }),
+  passport.authenticate('github', { failureRedirect: '/' }),
+  /* eslint-disable no-underscore-dangle */
+  (req, res) => {
+    res.cookie('userName', req.session.passport.user._json.login, {
+      httpOnly: false,
+    });
+    res.cookie('isAuth', 'true', {
+      httpOnly: false,
+    });
 
-(req, res) => {
-  res.cookie('userName', req.session.passport.user._json.login, {
-    httpOnly: false
-  })
-  res.cookie('isAuth', 'true',  {
-    httpOnly: false
-  })
-
-  res.redirect(urlPath())
-}
+    res.redirect(urlPath());
+  },
 );
 app.use('/', (req, res) => {
   res.sendStatus(200);
@@ -99,11 +104,4 @@ if (!module.parent) {
     /* eslint-disable no-console */
     console.log(`Express server listening on port ${PORT}`);
   });
-}
-function urlPath() {
-  if (process.env.NODE_ENV === 'development') {
-    return 'http://localhost:3000/'
-  } else {
-    return 'http://someLiveURL.com/'
-  }
 }
