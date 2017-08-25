@@ -31,17 +31,17 @@ class Orgs {
   }
 
   get orgs() {
-    return this.orgName ? this.getOrg() : this.getAllUserOrgs();
+    return this.orgName ? this.getOrg : this.getAllUserOrgs;
   }
 
-  getAllUserOrgs() {
+  get getAllUserOrgs() {
     return fetch(this.userOrgsUrl)
       .then(getJson)
       .then(filterRelevantFields)
       .then(createOrgInstances);
   }
 
-  getOrg() {
+  get getOrg() {
     return fetch(this.userOrgUrl)
       .then(getJson)
       .then(addToArray)

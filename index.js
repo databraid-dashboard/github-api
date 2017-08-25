@@ -12,8 +12,6 @@ const cors = require('cors');
 const app = express();
 
 app.use(partials());
-// app.use(methodOverride());
-
 const PORT = process.env.PORT || 8000;
 
 
@@ -27,11 +25,14 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
 }));
-
-
-
-
-
+app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema,
+    rootValue: root,
+    graphiql: true,
+  }),
+);
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -92,8 +93,6 @@ app.use('/', (req, res) => {
 app.use((req, res) => {
   res.sendStatus(404);
 });
-
-
 
 if (!module.parent) {
   app.listen(PORT, () => {
