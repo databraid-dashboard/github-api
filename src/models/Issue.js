@@ -1,5 +1,4 @@
 /* eslint-disable no-param-reassign */
-
 const Label = require('./Label');
 
 function getAssignee(assignee) {
