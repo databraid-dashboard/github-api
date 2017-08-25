@@ -31,10 +31,10 @@ class Org {
     this.login = login;
     this.url = url;
     this.avatarUrl = avatar_url;
-    this.reposUrl = repos_url;
+    this.reposUrl = `${repos_url}?access_token=${process.env.TKN}`;
   }
 
-  orgRepos() {
+  get orgRepos() {
     return fetch(this.reposUrl)
       .then(getJson)
       .then(addToArray)
