@@ -1,6 +1,5 @@
 /* eslint-disable no-undef, no-unused-expressions, no-debugger */
 const { expect } = require('chai');
-require('chai').use(require('sinon-chai'));
 const PullRequest = require('../src/models/PullRequest');
 
 describe('PullRequest model', () => {

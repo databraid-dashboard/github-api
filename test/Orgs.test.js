@@ -1,6 +1,5 @@
 /* eslint-disable no-undef, no-unused-expressions */
 const { expect } = require('chai');
-require('chai').use(require('sinon-chai'));
 require('dotenv').config();
 const nock = require('nock');
 const Orgs = require('../src/models/Orgs');

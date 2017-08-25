@@ -1,6 +1,5 @@
 /* eslint-disable no-undef, no-unused-expressions */
 const { expect } = require('chai');
-require('chai').use(require('sinon-chai'));
 const Label = require('../src/models/Label');
 
 describe('Label model', () => {
