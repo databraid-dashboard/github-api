@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const graphqlHTTP = require('express-graphql');
+const cors = require('cors');
 const root = require('./src/resolvers/RootResolver');
 const schema = require('./src/schema/schema');
 
@@ -20,14 +21,22 @@ const allowCrossDomain = function (req, res, next) {
 };
 
 app.use(bodyParser.json());
+app.use(cors());
 
-app.use(allowCrossDomain);
+app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema,
+    rootValue: root,
+    graphiql: true,
+  }),
+);
 
-app.use('/graphql', graphqlHTTP({
-  schema,
-  rootValue: root,
-  graphiql: true,
-}));
+
+// This handler is for the health checking from the load balancer
+app.use('/', (req, res) => {
+  res.sendStatus(200);
+});
 
 app.use((req, res) => {
   res.sendStatus(404);
