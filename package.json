@@ -3,16 +3,16 @@
   "version": "1.0.2",
   "description": "",
   "main": "index.js",
-	"scripts": {
-		"test": "scripts/test",
-		"production-test": "scripts/production-test",
-		"dev": "scripts/dev",
-		"up": "scripts/up",
-		"down": "scripts/down",
-		"lint": "scripts/lint",
-		"production-lint": "scripts/production-lint",
-		"start": "node index.js"
-	},
+  "scripts": {
+    "test": "scripts/test",
+    "production-test": "scripts/production-test",
+    "dev": "scripts/dev",
+    "up": "scripts/up",
+    "down": "scripts/down",
+    "lint": "scripts/lint",
+    "production-lint": "scripts/production-lint",
+    "start": "node index.js"
+  },
   "author": "",
   "license": "MIT",
   "dependencies": {

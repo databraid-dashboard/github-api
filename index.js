@@ -31,6 +31,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
 }));
+
 app.use(
   '/graphql',
   graphqlHTTP({
@@ -63,7 +64,6 @@ passport.use(new GitHubStrategy({
   }),
 ));
 
-
 app.use(
   '/graphql',
   graphqlHTTP({
@@ -72,7 +72,6 @@ app.use(
     graphiql: true,
   }),
 );
-
 
 app.get('/auth/github',
   passport.authenticate('github', { scope: ['user:email', 'read:org', 'notifications', 'repo'] }),
@@ -92,9 +91,11 @@ app.get('/auth/github/callback',
     res.redirect(urlPath());
   },
 );
+
 app.use('/', (req, res) => {
   res.sendStatus(200);
 });
+
 app.use((req, res) => {
   res.sendStatus(404);
 });
