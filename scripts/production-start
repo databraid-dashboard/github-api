@@ -3,5 +3,5 @@
 # This script is run as the default command INSIDE the container
 # and therefore does not need to issue commands via `docker-compose`
 
-./node_modules/@databraid/env-util/index.js --bucket databraid --key gihub-api
+./node_modules/@databraid/env-util/index.js --bucket databraid --key github-api
 node index.js
