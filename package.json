@@ -3,19 +3,20 @@
   "version": "1.0.2",
   "description": "",
   "main": "index.js",
-	"scripts": {
-		"test": "scripts/test",
-		"production-test": "scripts/production-test",
-		"dev": "scripts/dev",
-		"up": "scripts/up",
-		"down": "scripts/down",
-		"lint": "scripts/lint",
-		"production-lint": "scripts/production-lint",
-		"start": "node index.js"
-	},
+  "scripts": {
+    "test": "scripts/test",
+    "production-test": "scripts/production-test",
+    "dev": "scripts/dev",
+    "up": "scripts/up",
+    "down": "scripts/down",
+    "lint": "scripts/lint",
+    "production-lint": "scripts/production-lint",
+    "start": "scripts/production-start"
+  },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@databraid/env-util": "1.1.2",
     "body-parser": "1.17.2",
     "cors": "2.8.4",
     "dotenv": "4.0.0",
