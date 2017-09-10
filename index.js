@@ -8,25 +8,27 @@ const session = require('express-session');
 const passport = require('passport');
 const partials = require('express-partials');
 const cors = require('cors');
-const app = express();
 
+const app = express();
+/* eslint-disable no-unused-vars */
 const PORT = process.env.PORT || 8000;
 const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
 const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
 const PRODUCTION_CALLBACK_URL = process.env.PRODUCTION_CALLBACK_URL;
 const LOCAL_CALLBACK_URL = process.env.LOCAL_CALLBACK_URL;
-
-const allowCrossDomain = (req, res, next) => {
-  res.header('Access-Control-Allow-Credentials', true);
-  res.header('Access-Control-Allow-Origin', req.headers.origin);
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
-  if (req.method === 'OPTIONS') {
-    res.send(200);
-  } else {
-    next();
-  }
-};
+//
+// const allowCrossDomain = (req, res, next) => {
+//   res.header('Access-Control-Allow-Credentials', true);
+//   res.header('Access-Control-Allow-Origin', req.headers.origin);
+//   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+//   res.header('Access-Control-Allow-Headers',
+// 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+//   if (req.method === 'OPTIONS') {
+//     res.send(200);
+//   } else {
+//     next();
+//   }
+// };
 
 function urlPath() {
   if (process.env.NODE_ENV === 'development') {
@@ -107,9 +109,9 @@ app.get('/auth/github/callback',
     res.redirect(urlPath());
   },
 );
-app.get('/logout', (req, res) =>{
+app.get('/logout', (req, res) => {
   res.clearCookie('githubAccessToken');
-  res.clearCookie('userName')
+  res.clearCookie('userName');
   res.redirect(`${process.env.FRONT_END_URL}`);
 });
 app.use('/', (req, res) => {
