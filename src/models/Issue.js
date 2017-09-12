@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign */
+/* eslint-disable no-param-reassign, no-prototype-builtins  */
 
 const Label = require('./Label');
 
@@ -32,6 +32,12 @@ class Issue {
 
   get label() {
     return this.labels.map(label => new Label(label));
+  }
+  get isPR() {
+    if (this.issue.hasOwnProperty('pull_request')) {
+      return true;
+    }
+    return false;
   }
 }
 
