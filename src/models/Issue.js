@@ -32,6 +32,12 @@ class Issue {
   get label() {
     return this.labels.map(label => new Label(label));
   }
+  get isPR() {
+   if (this.issue.hasOwnProperty('pull_request')) {
+     return true;
+   }
+   return false;
+ }
 }
 
 module.exports = Issue;

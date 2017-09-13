@@ -69,17 +69,6 @@ passport.use(new GitHubStrategy({
   }),
 ));
 
-
-app.use(
-  '/graphql',
-  graphqlHTTP({
-    schema,
-    rootValue: root,
-    graphiql: true,
-  }),
-);
-
-
 app.get('/auth/github',
   passport.authenticate('github', { scope: ['user:email', 'read:org', 'notifications', 'repo'] }),
 );
