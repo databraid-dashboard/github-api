@@ -4,14 +4,19 @@ const graphqlHTTP = require('express-graphql');
 const root = require('./src/resolvers/RootResolver');
 const schema = require('./src/schema/schema');
 const GitHubStrategy = require('passport-github2').Strategy;
+const session = require('express-session');
 const passport = require('passport');
 const partials = require('express-partials');
-const session = require('express-session');
 const cors = require('cors');
 
 const app = express();
-
+/* eslint-disable no-unused-vars */
 const PORT = process.env.PORT || 8000;
+const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
+const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
+const PRODUCTION_CALLBACK_URL = process.env.PRODUCTION_CALLBACK_URL;
+const LOCAL_CALLBACK_URL = process.env.LOCAL_CALLBACK_URL;
+
 
 function urlPath() {
   if (process.env.NODE_ENV === 'development') {
@@ -20,7 +25,8 @@ function urlPath() {
   return 'http://someLiveURL.com/';
 }
 
-app.use(partials());
+
+app.use('/', partials());
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -53,7 +59,7 @@ passport.deserializeUser((obj, done) => {
 passport.use(new GitHubStrategy({
   clientID: process.env.GITHUB_CLIENT_ID,
   clientSecret: process.env.GITHUB_CLIENT_SECRET,
-  callbackURL: process.env.NODE_ENV === 'development' ? process.env.LOCAL_CALLBACK_URL : 'https:deployed_site.com',
+  callbackURL: process.env.NODE_ENV === 'development' ? process.env.LOCAL_CALLBACK_URL : process.env.PRODUCTION_CALLBACK_URL,
 },
   ((accessToken, refreshToken, profile, done) => {
     process.env.TKN = accessToken;
@@ -74,14 +80,17 @@ app.get('/auth/github/callback',
     res.cookie('userName', req.session.passport.user._json.login, {
       httpOnly: false,
     });
-    res.cookie('isAuth', 'true', {
+    res.cookie('githubAccessToken', process.env.TKN, {
       httpOnly: false,
     });
-
     res.redirect(urlPath());
   },
 );
-
+app.get('/logout', (req, res) => {
+  res.clearCookie('githubAccessToken');
+  res.clearCookie('userName');
+  res.redirect(`${process.env.FRONT_END_URL}`);
+});
 app.use('/', (req, res) => {
   res.sendStatus(200);
 });
