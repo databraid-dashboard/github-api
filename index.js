@@ -62,12 +62,12 @@ passport.use(new GitHubStrategy({
   clientSecret: process.env.GITHUB_CLIENT_SECRET,
   callbackURL: process.env.NODE_ENV === 'development' ? process.env.LOCAL_CALLBACK_URL : process.env.PRODUCTION_CALLBACK_URL,
 },
-  ((accessToken, refreshToken, profile, done) => {
-    process.env.TKN = accessToken;
-    process.nextTick(() =>
-      done(null, profile),
-    );
-  }),
+((accessToken, refreshToken, profile, done) => {
+  process.env.TKN = accessToken;
+  process.nextTick(() =>
+    done(null, profile),
+  );
+}),
 ));
 
 app.get('/auth/github',
