@@ -16,15 +16,7 @@ const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
 const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
 const PRODUCTION_CALLBACK_URL = process.env.PRODUCTION_CALLBACK_URL;
 const LOCAL_CALLBACK_URL = process.env.LOCAL_CALLBACK_URL;
-
-
-function urlPath() {
-  if (process.env.NODE_ENV === 'development') {
-    return 'http://localhost:3000/';
-  }
-  return 'http://someLiveURL.com/';
-}
-
+const REDIRECT_URL = process.env.REDIRECT_URL;
 
 app.use('/', partials());
 app.use(cors());
@@ -84,13 +76,13 @@ app.get('/auth/github/callback',
     res.cookie('githubAccessToken', process.env.TKN, {
       httpOnly: false,
     });
-    res.redirect(urlPath());
+    res.redirect(REDIRECT_URL);
   },
 );
 app.get('/logout', (req, res) => {
   res.clearCookie('githubAccessToken');
   res.clearCookie('userName');
-  res.redirect(`${process.env.FRONT_END_URL}`);
+  res.redirect(REDIRECT_URL);
 });
 app.use('/', (req, res) => {
   res.sendStatus(200);
