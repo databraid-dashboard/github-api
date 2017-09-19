@@ -1,3 +1,5 @@
+[ ![Codeship Status for databraid-dashboard/github-api](https://app.codeship.com/projects/b1fbc110-60f4-0135-cb3b-76a002477897/status?branch=master)](https://app.codeship.com/projects/239611)
+
 # Databraid API Starter Repo Without Postgres
 
 Use this repo as a starter repo for developing API servers without Postgres
