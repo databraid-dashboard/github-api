@@ -8,6 +8,7 @@ const session = require('express-session');
 const passport = require('passport');
 const partials = require('express-partials');
 const cors = require('cors');
+const morgan = require('morgan');
 
 const app = express();
 /* eslint-disable no-unused-vars */
@@ -18,6 +19,7 @@ const PRODUCTION_CALLBACK_URL = process.env.PRODUCTION_CALLBACK_URL;
 const LOCAL_CALLBACK_URL = process.env.LOCAL_CALLBACK_URL;
 const REDIRECT_URL = process.env.REDIRECT_URL;
 
+app.use(morgan('combined'));
 app.use('/', partials());
 app.use(cors());
 app.use(bodyParser.json());
