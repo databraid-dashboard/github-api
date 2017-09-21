@@ -63,17 +63,6 @@ passport.use(new GitHubStrategy({
   }),
 ));
 
-
-app.use(
-  '/graphql',
-  graphqlHTTP({
-    schema,
-    rootValue: root,
-    graphiql: true,
-  }),
-);
-
-
 app.get('/auth/github',
   passport.authenticate('github', { scope: ['user:email', 'read:org', 'notifications', 'repo'] }),
 );
@@ -82,7 +71,7 @@ app.get('/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/' }),
   /* eslint-disable no-underscore-dangle */
   (req, res) => {
-    res.cookie('userName', req.session.passport.user._json.login, {
+    res.cookie('githubUserName', req.session.passport.user._json.login, {
       httpOnly: false,
     });
     res.cookie('isAuth', 'true', {
