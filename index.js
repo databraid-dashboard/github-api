@@ -72,7 +72,7 @@ app.get('/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/' }),
   /* eslint-disable no-underscore-dangle */
   (req, res) => {
-    res.cookie('userName', req.session.passport.user._json.login, {
+    res.cookie('githubUserName', req.session.passport.user._json.login, {
       httpOnly: false,
     });
     res.cookie('githubAccessToken', process.env.TKN, {
@@ -83,7 +83,7 @@ app.get('/auth/github/callback',
 );
 app.get('/logout', (req, res) => {
   res.clearCookie('githubAccessToken');
-  res.clearCookie('userName');
+  res.clearCookie('githubUserName');
   res.redirect(REDIRECT_URL);
 });
 app.use('/', (req, res) => {
