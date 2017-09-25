@@ -37,7 +37,6 @@ app.use(
   graphqlHTTP({
     schema,
     rootValue: root,
-    graphiql: true,
   }),
 );
 
@@ -89,6 +88,7 @@ app.get('/logout', (req, res) => {
 app.use('/', (req, res) => {
   res.sendStatus(200);
 });
+
 app.use((req, res) => {
   res.sendStatus(404);
 });
