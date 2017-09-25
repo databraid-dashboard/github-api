@@ -1,25 +1,7 @@
-# Databraid API Starter Repo Without Postgres
+[ ![Codeship Status for databraid-dashboard/github-api](https://app.codeship.com/projects/b1fbc110-60f4-0135-cb3b-76a002477897/status?branch=master)](https://app.codeship.com/projects/239611)
 
-Use this repo as a starter repo for developing API servers without Postgres
+# Databraid Github API
 
-## Usage
+## Description
 
-Before beginning make sure you have Docker installed and running, then do:
-
-```
-npm i
-npm run up
-```
-
-When finished developing do:
-
-```
-npm run down
-```
-
-Testing and linting can all be done respectively with:
-
-```
-npm test
-npm run lint
-```
+An Express server/router that uses GraphQL to access GitHub's API v3 and serve information to the Databraid Github Widget. Logging in happens with Oauth2 where you will be redirected to a Github sign in screen to allow Databraid access to some information about your Github account.

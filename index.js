@@ -8,6 +8,7 @@ const session = require('express-session');
 const passport = require('passport');
 const partials = require('express-partials');
 const cors = require('cors');
+const morgan = require('morgan');
 
 const app = express();
 /* eslint-disable no-unused-vars */
@@ -16,16 +17,9 @@ const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
 const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
 const PRODUCTION_CALLBACK_URL = process.env.PRODUCTION_CALLBACK_URL;
 const LOCAL_CALLBACK_URL = process.env.LOCAL_CALLBACK_URL;
+const REDIRECT_URL = process.env.REDIRECT_URL;
 
-
-function urlPath() {
-  if (process.env.NODE_ENV === 'development') {
-    return 'http://localhost:3000/';
-  }
-  return 'http://someLiveURL.com/';
-}
-
-
+app.use(morgan('combined'));
 app.use('/', partials());
 app.use(cors());
 app.use(bodyParser.json());
@@ -77,19 +71,28 @@ app.get('/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/' }),
   /* eslint-disable no-underscore-dangle */
   (req, res) => {
-    res.cookie('userName', req.session.passport.user._json.login, {
+    res.cookie('githubUserName', req.session.passport.user._json.login, {
       httpOnly: false,
     });
     res.cookie('githubAccessToken', process.env.TKN, {
       httpOnly: false,
     });
+<<<<<<< HEAD
     res.redirect(urlPath());
+=======
+    res.redirect(REDIRECT_URL);
+>>>>>>> 4be18451ab47f39a575cfac3e8b6d403ce1657fa
   },
 );
 app.get('/logout', (req, res) => {
   res.clearCookie('githubAccessToken');
+<<<<<<< HEAD
   res.clearCookie('userName');
   res.redirect(`${process.env.FRONT_END_URL}`);
+=======
+  res.clearCookie('githubUserName');
+  res.redirect(REDIRECT_URL);
+>>>>>>> 4be18451ab47f39a575cfac3e8b6d403ce1657fa
 });
 app.use('/', (req, res) => {
   res.sendStatus(200);
