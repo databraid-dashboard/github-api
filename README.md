@@ -2,8 +2,6 @@
 
 # Databraid GitHub API
 
-Use this repo as a starter repo for developing API servers without Postgres
-
 ## Usage
 
 Before beginning make sure you have [Docker](https://www.docker.com/) installed and running, then do:
