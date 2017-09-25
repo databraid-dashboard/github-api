@@ -77,22 +77,13 @@ app.get('/auth/github/callback',
     res.cookie('githubAccessToken', process.env.TKN, {
       httpOnly: false,
     });
-<<<<<<< HEAD
-    res.redirect(urlPath());
-=======
     res.redirect(REDIRECT_URL);
->>>>>>> 4be18451ab47f39a575cfac3e8b6d403ce1657fa
   },
 );
 app.get('/logout', (req, res) => {
   res.clearCookie('githubAccessToken');
-<<<<<<< HEAD
-  res.clearCookie('userName');
-  res.redirect(`${process.env.FRONT_END_URL}`);
-=======
   res.clearCookie('githubUserName');
   res.redirect(REDIRECT_URL);
->>>>>>> 4be18451ab47f39a575cfac3e8b6d403ce1657fa
 });
 app.use('/', (req, res) => {
   res.sendStatus(200);
