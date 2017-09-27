@@ -37,7 +37,6 @@ app.use(
   graphqlHTTP({
     schema,
     rootValue: root,
-    graphiql: true,
   }),
 );
 
@@ -74,21 +73,24 @@ app.get('/auth/github/callback',
   (req, res) => {
     res.cookie('githubUserName', req.session.passport.user._json.login, {
       httpOnly: false,
+      domain: process.env.DOMAIN_FOR_COOKIES || 'localhost',
     });
     res.cookie('githubAccessToken', process.env.TKN, {
       httpOnly: false,
+      domain: process.env.DOMAIN_FOR_COOKIES || 'localhost',
     });
     res.redirect(REDIRECT_URL);
   },
 );
 app.get('/logout', (req, res) => {
-  res.clearCookie('githubAccessToken');
-  res.clearCookie('githubUserName');
+  res.clearCookie('githubAccessToken', { domain: process.env.DOMAIN_FOR_COOKIES || 'localhost' });
+  res.clearCookie('githubUserName', { domain: process.env.DOMAIN_FOR_COOKIES || 'localhost' });
   res.redirect(REDIRECT_URL);
 });
 app.use('/', (req, res) => {
   res.sendStatus(200);
 });
+
 app.use((req, res) => {
   res.sendStatus(404);
 });
